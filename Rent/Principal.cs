@@ -12,6 +12,7 @@ namespace Rent
 {
     public partial class Principal : Form
     {
+
         public Principal()
         {
             InitializeComponent();
