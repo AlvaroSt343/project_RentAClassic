@@ -46,16 +46,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Clientes_Alta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Clientes_Alta.Designer.cs">
+      <DependentUpon>Clientes_Alta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes_Catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Catalogo.Designer.cs">
+      <DependentUpon>Clientes_Catalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Renta_Alta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renta_Alta.Designer.cs">
+      <DependentUpon>Renta_Alta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario_Alta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario_Alta.Designer.cs">
+      <DependentUpon>Usuario_Alta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario_Catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario_Catalogo.Designer.cs">
+      <DependentUpon>Usuario_Catalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos_Alta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos_Alta.Designer.cs">
+      <DependentUpon>Vehiculos_Alta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos_Catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos_Catalogo.Designer.cs">
+      <DependentUpon>Vehiculos_Catalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos_Recepcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos_Recepcion.Designer.cs">
+      <DependentUpon>Vehiculos_Recepcion.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
