@@ -80,6 +80,12 @@
     <Compile Include="Renta_Alta.Designer.cs">
       <DependentUpon>Renta_Alta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Renta_Catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renta_Catalogo.Designer.cs">
+      <DependentUpon>Renta_Catalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario_Alta.cs">
       <SubType>Form</SubType>
     </Compile>
