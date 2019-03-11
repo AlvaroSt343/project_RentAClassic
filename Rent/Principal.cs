@@ -14,6 +14,10 @@ namespace Rent
     //aqui inicia todo
     public partial class Principal : Form
     {
+        public Login nLog = new Login();
+                
+        
+
         public Principal()
         {
             InitializeComponent();
@@ -127,6 +131,11 @@ namespace Rent
         private void CerrarSesion_Click(object sender, EventArgs e)
         {
             //aqui cierra principal y muestra login
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

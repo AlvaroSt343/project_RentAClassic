@@ -311,6 +311,7 @@
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
