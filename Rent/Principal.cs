@@ -11,15 +11,13 @@ using System.Runtime.InteropServices;
 
 namespace Rent
 {
+    //aqui inicia todo
     public partial class Principal : Form
     {
-
         public Principal()
         {
             InitializeComponent();
         }
-
-        //aqui inicia todo
 
         //VARIABLES PUCLICAS DE CLASE PRINCIPAL
         int estado = 1;
@@ -42,7 +40,6 @@ namespace Rent
         }
 
 
-  
         // ################# I N I C I A N    B O T O N E S  ##############################################
 
         //boton despliega menu
