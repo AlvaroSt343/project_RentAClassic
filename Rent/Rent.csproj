@@ -47,7 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\MySQL.cs" />
+    <Compile Include="Clases\ConnectionSQL.cs" />
+    <Compile Include="Clases\UserDAO.cs" />
+    <Compile Include="Clases\UserLoginCache.cs" />
+    <Compile Include="Clases\UserModel.cs" />
     <Compile Include="Clientes_Alta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="Renta_Alta.resx">
       <DependentUpon>Renta_Alta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renta_Catalogo.resx">
+      <DependentUpon>Renta_Catalogo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -130,7 +130,11 @@ namespace Rent
 
         private void CerrarSesion_Click(object sender, EventArgs e)
         {
-            //aqui cierra principal y muestra login
+            DialogResult result = MessageBox.Show("¿Desea cerrar sesion?", "Aviso! ..", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void Principal_Load(object sender, EventArgs e)
