@@ -16,5 +16,10 @@ namespace Rent
         {
             InitializeComponent();
         }
+
+        private void Renta_Catalogo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
