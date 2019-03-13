@@ -16,5 +16,15 @@ namespace Rent
         {
             InitializeComponent();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Usuario_Alta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
