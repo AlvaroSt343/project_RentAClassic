@@ -28,16 +28,18 @@ namespace Rent.Clases
                     {
                         while (reader.Read())
                         {
-                            UserLoginCache.ID = reader.GetInt32(0);
-                            UserLoginCache.NOMBRE = reader.GetString(1);
-                            UserLoginCache.USER = reader.GetString(2);
-                            UserLoginCache.PASS = reader.GetString(3);
-                            UserLoginCache.PERFIL= reader.GetString(4);
+                            Variables.ID = reader.GetInt32(0);
+                            Variables.NOMBRE = reader.GetString(1);
+                            Variables.USER = reader.GetString(2);
+                            Variables.PASS = reader.GetString(3);
+                            Variables.PERFIL = reader.GetString(4);
                         }
                         return true;
                     }
                     else
+                    {
                         return false;
+                    }
                 }
             }
 

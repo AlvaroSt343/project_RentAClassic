@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ConnectionSQL.cs" />
+    <Compile Include="Clases\Consultas.cs" />
+    <Compile Include="Clases\MyConnection.cs" />
     <Compile Include="Clases\UserDAO.cs" />
-    <Compile Include="Clases\UserLoginCache.cs" />
+    <Compile Include="Clases\Variables.cs" />
     <Compile Include="Clases\UserModel.cs" />
     <Compile Include="Clientes_Alta.cs">
       <SubType>Form</SubType>
@@ -139,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Renta_Catalogo.resx">
       <DependentUpon>Renta_Catalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario_Catalogo.resx">
+      <DependentUpon>Usuario_Catalogo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

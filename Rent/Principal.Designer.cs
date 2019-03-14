@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.CerrarSesion = new System.Windows.Forms.Button();
@@ -45,6 +46,8 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.botonMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.Hora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
@@ -53,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).BeginInit();
+            this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -229,6 +233,7 @@
             // 
             // barraTitulo
             // 
+            this.barraTitulo.BackColor = System.Drawing.Color.SteelBlue;
             this.barraTitulo.Controls.Add(this.minimizar);
             this.barraTitulo.Controls.Add(this.maximizar);
             this.barraTitulo.Controls.Add(this.cerrar);
@@ -236,7 +241,7 @@
             this.barraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulo.Location = new System.Drawing.Point(53, 0);
             this.barraTitulo.Name = "barraTitulo";
-            this.barraTitulo.Size = new System.Drawing.Size(1247, 50);
+            this.barraTitulo.Size = new System.Drawing.Size(1247, 38);
             this.barraTitulo.TabIndex = 1;
             this.barraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulo_MouseDown);
             // 
@@ -245,9 +250,9 @@
             this.minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizar.Image = ((System.Drawing.Image)(resources.GetObject("minimizar.Image")));
-            this.minimizar.Location = new System.Drawing.Point(1118, 9);
+            this.minimizar.Location = new System.Drawing.Point(1132, 4);
             this.minimizar.Name = "minimizar";
-            this.minimizar.Size = new System.Drawing.Size(35, 35);
+            this.minimizar.Size = new System.Drawing.Size(30, 30);
             this.minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.minimizar.TabIndex = 3;
             this.minimizar.TabStop = false;
@@ -258,9 +263,9 @@
             this.maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.maximizar.Image = ((System.Drawing.Image)(resources.GetObject("maximizar.Image")));
-            this.maximizar.Location = new System.Drawing.Point(1159, 9);
+            this.maximizar.Location = new System.Drawing.Point(1173, 4);
             this.maximizar.Name = "maximizar";
-            this.maximizar.Size = new System.Drawing.Size(35, 35);
+            this.maximizar.Size = new System.Drawing.Size(30, 30);
             this.maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.maximizar.TabIndex = 2;
             this.maximizar.TabStop = false;
@@ -271,9 +276,9 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(1200, 9);
+            this.cerrar.Location = new System.Drawing.Point(1214, 4);
             this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(35, 35);
+            this.cerrar.Size = new System.Drawing.Size(30, 30);
             this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cerrar.TabIndex = 1;
             this.cerrar.TabStop = false;
@@ -283,7 +288,7 @@
             // 
             this.botonMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.botonMenu.Image = ((System.Drawing.Image)(resources.GetObject("botonMenu.Image")));
-            this.botonMenu.Location = new System.Drawing.Point(6, 9);
+            this.botonMenu.Location = new System.Drawing.Point(3, 1);
             this.botonMenu.Name = "botonMenu";
             this.botonMenu.Size = new System.Drawing.Size(35, 35);
             this.botonMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -293,22 +298,43 @@
             // 
             // panelContenedor
             // 
+            this.panelContenedor.BackColor = System.Drawing.Color.Transparent;
+            this.panelContenedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelContenedor.BackgroundImage")));
+            this.panelContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelContenedor.Controls.Add(this.Hora);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(53, 50);
+            this.panelContenedor.Location = new System.Drawing.Point(53, 38);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1247, 738);
+            this.panelContenedor.Size = new System.Drawing.Size(1247, 750);
             this.panelContenedor.TabIndex = 2;
+            // 
+            // Hora
+            // 
+            this.Hora.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hora.Location = new System.Drawing.Point(1075, 692);
+            this.Hora.Name = "Hora";
+            this.Hora.Size = new System.Drawing.Size(160, 37);
+            this.Hora.TabIndex = 0;
+            this.Hora.Text = "00:00:00";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1300, 788);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.barraTitulo);
             this.Controls.Add(this.MenuVertical);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Principal";
+            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Principal_Load);
@@ -320,6 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).EndInit();
+            this.panelContenedor.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -342,6 +369,8 @@
         private System.Windows.Forms.Button Config;
         private System.Windows.Forms.Button Reportes;
         private System.Windows.Forms.Button Usuarios;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label Hora;
     }
 }
 

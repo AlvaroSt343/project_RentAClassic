@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace Rent.Clases
 {
-    public abstract class ConnectionSQL
+    public class ConnectionSQL
     {
         private readonly string connectionString;
 
@@ -23,10 +23,9 @@ namespace Rent.Clases
 
             //Esta es la cadena para abrir la conexion
             connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}", servidor, puerto, usuario, password, database);
-
-            //connectionString = "Server = localhost;DataBase = rentaclassic; integrated security= true";
         }
-        protected MySqlConnection GetConnection()
+
+        public MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);
         }

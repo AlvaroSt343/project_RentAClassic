@@ -13,11 +13,7 @@ namespace Rent
 {
     //aqui inicia todo
     public partial class Principal : Form
-    {
-        public Login nLog = new Login();
-                
-        
-
+    {             
         public Principal()
         {
             InitializeComponent();
@@ -45,7 +41,6 @@ namespace Rent
 
 
         // ################# I N I C I A N    B O T O N E S  ##############################################
-
         //boton despliega menu
         private void botonMenu_Click(object sender, EventArgs e)
         {
@@ -140,6 +135,11 @@ namespace Rent
         private void Principal_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Hora.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }
