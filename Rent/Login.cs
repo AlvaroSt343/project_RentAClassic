@@ -107,22 +107,12 @@ namespace Rent
             Application.Exit();
         }
 
-
-
-
-
-
-
-        private void log_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //EVENTO INSERVIBLE
+            this.Visible = false;
+            Usuario_Alta nuevoUsser = new Usuario_Alta();
+            nuevoUsser.Show();
         }
-        private void button1_Paint(object sender, PaintEventArgs e)
-        {
-            //EVENTO INSERVIBLE
-        }
-
-        
     }
 }
 

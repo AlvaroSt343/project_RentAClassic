@@ -48,13 +48,13 @@
             this.Listado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Listado.BackgroundColor = System.Drawing.Color.White;
+            this.Listado.BackgroundColor = System.Drawing.Color.DarkGray;
             this.Listado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Listado.Location = new System.Drawing.Point(12, 58);
+            this.Listado.Location = new System.Drawing.Point(12, 42);
             this.Listado.Name = "Listado";
             this.Listado.ReadOnly = true;
-            this.Listado.Size = new System.Drawing.Size(1213, 564);
+            this.Listado.Size = new System.Drawing.Size(1035, 463);
             this.Listado.TabIndex = 0;
             // 
             // panel1
@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1252, 36);
+            this.panel1.Size = new System.Drawing.Size(1059, 36);
             this.panel1.TabIndex = 4;
             // 
             // visualizar
@@ -128,7 +128,7 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(1223, 5);
+            this.cerrar.Location = new System.Drawing.Point(1030, 5);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(25, 25);
             this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1252, 650);
+            this.ClientSize = new System.Drawing.Size(1059, 517);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Listado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

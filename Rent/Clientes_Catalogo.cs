@@ -212,7 +212,7 @@ namespace Rent
             panelContenedor.Controls.Clear();
             panelContenedor.Hide();
             panelContenedor.Show();
-            AbrirFormInPanel(new Clientes_Detalles());
+            //AbrirFormInPanel(new Clientes_Detalles());
             
         }
     }

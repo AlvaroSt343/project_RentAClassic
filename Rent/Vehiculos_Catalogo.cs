@@ -44,6 +44,7 @@ namespace Rent
 
         private void Classic_Click(object sender, EventArgs e)
         {
+            panelVehiculos.Controls.Clear();
             Variables.accion = "SELECT Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Classic' AND estatus='DISPONIBLE'";
             EliminaBotones();
             LlenaLista();
@@ -52,6 +53,7 @@ namespace Rent
 
         private void Muscle_Click(object sender, EventArgs e)
         {
+            panelVehiculos.Controls.Clear();
             Variables.accion = "SELECT Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Muscle' AND estatus='DISPONIBLE'";
             EliminaBotones();
             LlenaLista();
@@ -60,6 +62,7 @@ namespace Rent
 
         private void PickUp_Click(object sender, EventArgs e)
         {
+            panelVehiculos.Controls.Clear();
             Variables.accion = "SELECT Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'PickUp' AND estatus='DISPONIBLE'";
             EliminaBotones();
             LlenaLista();
@@ -68,28 +71,11 @@ namespace Rent
 
         private void Motorcycle_Click(object sender, EventArgs e)
         {
+            panelVehiculos.Controls.Clear();
             Variables.accion = "SELECT Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Motorcycle' AND estatus='DISPONIBLE'";
             EliminaBotones();
             LlenaLista();
             CreaBotones();
-        }
-
-
-
-        public void LlenaLista()
-        {
-            MyConnection nuevaConexion = new MyConnection();
-            nuevaConexion.abrirConexion();
-            MySqlCommand cmd = new MySqlCommand(Variables.accion, nuevaConexion.GetConexion());
-            MySqlDataReader reader = cmd.ExecuteReader();
-            lista.Clear();
-            while (reader.Read())
-            {
-                lista.Add(new datos()
-                {
-                    DescripcionVehiculo = Convert.ToString(reader[0]) + " " + Convert.ToString(reader[1]) + " " + Convert.ToString(reader[2])
-                });
-            }
         }
 
         private void CreaBotones()
@@ -113,9 +99,33 @@ namespace Rent
                 arrbutton[x].UseVisualStyleBackColor = true;
                 arrbutton[x].ForeColor = System.Drawing.Color.White;
                 this.panelVehiculos.Controls.Add(arrbutton[x]);
-                //arrbutton[x].Click += new System.EventHandler(arrbutton[x]_Click);
+                arrbutton[x].Click += new System.EventHandler(SelectAuto);
+
             }
         }
+
+        public void LlenaLista()
+        {
+            MyConnection nuevaConexion = new MyConnection();
+            nuevaConexion.abrirConexion();
+            MySqlCommand cmd = new MySqlCommand(Variables.accion, nuevaConexion.GetConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            lista.Clear();
+            while (reader.Read())
+            {
+                lista.Add(new datos()
+                {
+                    DescripcionVehiculo = Convert.ToString(reader[0]) + " " + Convert.ToString(reader[1]) + " " + Convert.ToString(reader[2])
+                });
+            }
+        }
+
+        private void SelectAuto(object sender, EventArgs e)
+        {
+            Button ax = (Button)sender;
+            MessageBox.Show(ax.Name);
+        }
+
 
         private void EliminaBotones()
         {

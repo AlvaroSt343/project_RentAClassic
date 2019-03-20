@@ -340,7 +340,6 @@ namespace Rent
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Principal";
-            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -355,11 +354,6 @@ namespace Rent
             ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).EndInit();
             this.ResumeLayout(false);
 
-        }
-
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-            //throw new NotImplementedException();
         }
 
         #endregion

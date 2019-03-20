@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,10 @@ namespace Rent
         {
             InitializeComponent();
         }
+        //uso de libreria para mover formulario libremente
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")] static extern public void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")] static extern public void SendMessage(System.IntPtr hwnd, int wmsg, int wparan, int lparan);
 
         private void GuardaUsuario_Click(object sender, EventArgs e)
         {
@@ -31,14 +36,19 @@ namespace Rent
                 {
                     Variables.accion = " INSERT INTO usuarios (NOMBRE, USER, PASS, PERFIL, ESTATUS ) Values"
                     + "(" + "'" + Nombre.Text + "','" + Usuario.Text + "','" + pass.Text + "',' ADMIN','1')";
-
                     GuardaNuevoUsuario();
+                    this.Close();
                 }
                 else
                 {
                     lblErrorMessage.Visible = true;
                     lblErrorMessage.Text = "   ¡Las contraseñas no coinciden!";
                 }
+            }
+            else
+            {
+                lblErrorMessage.Visible = true;
+                lblErrorMessage.Text = "   ¡Debe completar los campos!";
             }
         }
 
@@ -52,12 +62,10 @@ namespace Rent
             {
                 return "NO";
             }
-            
         }
 
         private void GuardaNuevoUsuario()
         {
-            //ins_pro inserta productos en la tabla
             MyConnection cons = new MyConnection();
             cons.abrirConexion();
             MySqlCommand pro = new MySqlCommand(Variables.accion);
@@ -65,6 +73,21 @@ namespace Rent
             pro.ExecuteNonQuery();
             cons.cerrarConexion();
             MessageBox.Show("Usuario guardado exitosamente", "Inserccion Exitosa!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void cerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Desea salir?", "Aviso..", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void panel4_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
