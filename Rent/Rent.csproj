@@ -168,6 +168,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Reporte01.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuario_Alta.resx">
+      <DependentUpon>Usuario_Alta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario_Catalogo.resx">
       <DependentUpon>Usuario_Catalogo.cs</DependentUpon>
     </EmbeddedResource>

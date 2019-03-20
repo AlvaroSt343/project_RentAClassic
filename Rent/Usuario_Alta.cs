@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Rent.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +19,52 @@ namespace Rent
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void GuardaUsuario_Click(object sender, EventArgs e)
         {
+            lblErrorMessage.Visible = false;
+            string Completo = "";
+            Completo = Valida();
 
+            if (Completo == "SI")
+            {
+                if (pass.Text == ConfirmaPass.Text)
+                {
+                    Variables.accion = " INSERT INTO usuarios (NOMBRE, USER, PASS, PERFIL, ESTATUS ) Values"
+                    + "(" + "'" + Nombre.Text + "','" + Usuario.Text + "','" + pass.Text + "',' ADMIN','1')";
+
+                    GuardaNuevoUsuario();
+                }
+                else
+                {
+                    lblErrorMessage.Visible = true;
+                    lblErrorMessage.Text = "   ¡Las contraseñas no coinciden!";
+                }
+            }
         }
 
-        private void Usuario_Alta_Load(object sender, EventArgs e)
+        private string Valida()
         {
+            if (Nombre.Text!="" && Usuario.Text!="" && pass.Text!="")
+            {
+                return "SI";
+            }
+            else
+            {
+                return "NO";
+            }
+            
+        }
 
+        private void GuardaNuevoUsuario()
+        {
+            //ins_pro inserta productos en la tabla
+            MyConnection cons = new MyConnection();
+            cons.abrirConexion();
+            MySqlCommand pro = new MySqlCommand(Variables.accion);
+            pro.Connection = cons.GetConexion();
+            pro.ExecuteNonQuery();
+            cons.cerrarConexion();
+            MessageBox.Show("Usuario guardado exitosamente", "Inserccion Exitosa!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
