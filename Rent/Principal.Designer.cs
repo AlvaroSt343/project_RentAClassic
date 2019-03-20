@@ -72,6 +72,7 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(53, 788);
             this.MenuVertical.TabIndex = 0;
+            this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
             // 
             // CerrarSesion
             // 
@@ -238,6 +239,7 @@
             this.barraTitulo.Name = "barraTitulo";
             this.barraTitulo.Size = new System.Drawing.Size(1247, 50);
             this.barraTitulo.TabIndex = 1;
+            this.barraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.barraTitulo_Paint);
             this.barraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulo_MouseDown);
             // 
             // minimizar
@@ -298,6 +300,7 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1247, 738);
             this.panelContenedor.TabIndex = 2;
+            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // Principal
             // 
