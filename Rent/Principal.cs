@@ -26,6 +26,18 @@ namespace Rent
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")] static extern public void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")] static extern public void SendMessage(System.IntPtr hwnd, int wmsg, int wparan, int lparan);
 
+        //objeto para mover libre
+        private void barraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void Hora_Click(object sender, EventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         //funcion para insertar nuevo form dentro de principal
         private void AbrirFormInPanel(object Formhijo)
         {
@@ -86,16 +98,14 @@ namespace Rent
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void barraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle,0x112,0xf012,0);
-        }
+
 
         //BOTONES DE MENU
         private void Vehiculos_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new Vehiculos_Catalogo());
+            //AbrirFormInPanel(new Vehiculos_Catalogo());
+            Vehiculos_Catalogo Catalogo = new Vehiculos_Catalogo();
+            Catalogo.Show();
         }
 
         private void Rentas_Click(object sender, EventArgs e)

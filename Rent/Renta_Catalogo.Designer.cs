@@ -31,8 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Renta_Catalogo));
             this.Listado = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.visualizar = new System.Windows.Forms.Button();
+            this.cancelar = new System.Windows.Forms.Button();
+            this.editar = new System.Windows.Forms.Button();
             this.cerrar = new System.Windows.Forms.PictureBox();
+            this.nuevaRenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Listado)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
@@ -51,34 +54,74 @@
             this.Listado.Location = new System.Drawing.Point(12, 58);
             this.Listado.Name = "Listado";
             this.Listado.ReadOnly = true;
-            this.Listado.Size = new System.Drawing.Size(1004, 564);
+            this.Listado.Size = new System.Drawing.Size(1213, 564);
             this.Listado.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
+            this.panel1.Controls.Add(this.visualizar);
+            this.panel1.Controls.Add(this.cancelar);
+            this.panel1.Controls.Add(this.editar);
             this.panel1.Controls.Add(this.cerrar);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.nuevaRenta);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1252, 36);
             this.panel1.TabIndex = 4;
             // 
-            // button1
+            // visualizar
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Nueva Renta";
-            this.button1.UseVisualStyleBackColor = false;
+            this.visualizar.BackColor = System.Drawing.Color.Transparent;
+            this.visualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.visualizar.FlatAppearance.BorderSize = 0;
+            this.visualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.visualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.visualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.visualizar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.visualizar.ForeColor = System.Drawing.Color.White;
+            this.visualizar.Location = new System.Drawing.Point(299, 1);
+            this.visualizar.Name = "visualizar";
+            this.visualizar.Size = new System.Drawing.Size(142, 32);
+            this.visualizar.TabIndex = 15;
+            this.visualizar.Text = "Visualizar";
+            this.visualizar.UseVisualStyleBackColor = false;
+            this.visualizar.Click += new System.EventHandler(this.visualizar_Click);
+            // 
+            // cancelar
+            // 
+            this.cancelar.BackColor = System.Drawing.Color.Transparent;
+            this.cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelar.FlatAppearance.BorderSize = 0;
+            this.cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelar.ForeColor = System.Drawing.Color.White;
+            this.cancelar.Location = new System.Drawing.Point(447, 1);
+            this.cancelar.Name = "cancelar";
+            this.cancelar.Size = new System.Drawing.Size(142, 32);
+            this.cancelar.TabIndex = 14;
+            this.cancelar.Text = "Cancelar";
+            this.cancelar.UseVisualStyleBackColor = false;
+            // 
+            // editar
+            // 
+            this.editar.BackColor = System.Drawing.Color.Transparent;
+            this.editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editar.FlatAppearance.BorderSize = 0;
+            this.editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editar.ForeColor = System.Drawing.Color.White;
+            this.editar.Location = new System.Drawing.Point(151, 1);
+            this.editar.Name = "editar";
+            this.editar.Size = new System.Drawing.Size(142, 32);
+            this.editar.TabIndex = 13;
+            this.editar.Text = "Editar";
+            this.editar.UseVisualStyleBackColor = false;
             // 
             // cerrar
             // 
@@ -92,6 +135,24 @@
             this.cerrar.TabIndex = 12;
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
+            // 
+            // nuevaRenta
+            // 
+            this.nuevaRenta.BackColor = System.Drawing.Color.Transparent;
+            this.nuevaRenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nuevaRenta.FlatAppearance.BorderSize = 0;
+            this.nuevaRenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.nuevaRenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.nuevaRenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nuevaRenta.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevaRenta.ForeColor = System.Drawing.Color.White;
+            this.nuevaRenta.Location = new System.Drawing.Point(3, 1);
+            this.nuevaRenta.Name = "nuevaRenta";
+            this.nuevaRenta.Size = new System.Drawing.Size(142, 32);
+            this.nuevaRenta.TabIndex = 11;
+            this.nuevaRenta.Text = "Nueva Renta";
+            this.nuevaRenta.UseVisualStyleBackColor = false;
+            this.nuevaRenta.Click += new System.EventHandler(this.nuevaRenta_Click);
             // 
             // Renta_Catalogo
             // 
@@ -115,7 +176,10 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView Listado;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button nuevaRenta;
         private System.Windows.Forms.PictureBox cerrar;
+        private System.Windows.Forms.Button editar;
+        private System.Windows.Forms.Button cancelar;
+        private System.Windows.Forms.Button visualizar;
     }
 }

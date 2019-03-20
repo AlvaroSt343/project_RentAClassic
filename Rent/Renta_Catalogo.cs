@@ -14,8 +14,8 @@ namespace Rent
 {
     public partial class Renta_Catalogo : Form
     {
-        Consultas nuevaCC = new Consultas();
-
+        Renta_Alta Ralta = new Renta_Alta();
+        
         public Renta_Catalogo()
         {
             InitializeComponent();
@@ -27,14 +27,15 @@ namespace Rent
             ConsultaListado();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cerrar_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void nuevaRenta_Click(object sender, EventArgs e)
         {
-
+            Ralta.MdiParent = this.MdiParent;
+            Ralta.Show();
         }
 
         private void ConsultaListado()
@@ -49,10 +50,13 @@ namespace Rent
             Listado.DataSource = tht.Tables["Listado"].DefaultView;
         }
 
-        private void cerrar_Click(object sender, EventArgs e)
+        private void visualizar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Reporte nuevoRpt = new Reporte();
+            nuevoRpt.Show();
         }
+
+
         //Consultas ejecuta = new Consultas();
         //Variables.accion = "INSERT";
         //    Variables.se_guardo=ejecuta.ejecutaAccion();

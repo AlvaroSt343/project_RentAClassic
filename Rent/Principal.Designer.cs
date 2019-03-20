@@ -1,4 +1,7 @@
-﻿namespace Rent
+﻿using System;
+using System.Windows.Forms;
+
+namespace Rent
 {
     partial class Principal
     {
@@ -45,8 +48,8 @@
             this.maximizar = new System.Windows.Forms.PictureBox();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.botonMenu = new System.Windows.Forms.PictureBox();
-            this.panelContenedor = new System.Windows.Forms.Panel();
             this.Hora = new System.Windows.Forms.Label();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
@@ -56,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).BeginInit();
-            this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -238,6 +240,7 @@
             this.barraTitulo.Controls.Add(this.maximizar);
             this.barraTitulo.Controls.Add(this.cerrar);
             this.barraTitulo.Controls.Add(this.botonMenu);
+            this.barraTitulo.Controls.Add(this.Hora);
             this.barraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulo.Location = new System.Drawing.Point(53, 0);
             this.barraTitulo.Name = "barraTitulo";
@@ -296,27 +299,29 @@
             this.botonMenu.TabStop = false;
             this.botonMenu.Click += new System.EventHandler(this.botonMenu_Click);
             // 
+            // Hora
+            // 
+            this.Hora.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Hora.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hora.Location = new System.Drawing.Point(0, 0);
+            this.Hora.Name = "Hora";
+            this.Hora.Size = new System.Drawing.Size(1247, 30);
+            this.Hora.TabIndex = 4;
+            this.Hora.Text = "00:00:00";
+            this.Hora.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora.Click += new System.EventHandler(this.Hora_Click);
+            // 
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.Transparent;
             this.panelContenedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelContenedor.BackgroundImage")));
             this.panelContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelContenedor.Controls.Add(this.Hora);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(53, 38);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1247, 750);
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
-            // 
-            // Hora
-            // 
-            this.Hora.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hora.Location = new System.Drawing.Point(1075, 692);
-            this.Hora.Name = "Hora";
-            this.Hora.Size = new System.Drawing.Size(160, 37);
-            this.Hora.TabIndex = 0;
-            this.Hora.Text = "00:00:00";
             // 
             // timer1
             // 
@@ -338,6 +343,7 @@
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Principal_Load);
             this.MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
@@ -347,9 +353,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).EndInit();
-            this.panelContenedor.ResumeLayout(false);
             this.ResumeLayout(false);
 
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+            //throw new NotImplementedException();
         }
 
         #endregion
@@ -371,7 +381,7 @@
         private System.Windows.Forms.Button Reportes;
         private System.Windows.Forms.Button Usuarios;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label Hora;
+        private Label Hora;
     }
 }
 
