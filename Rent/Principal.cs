@@ -93,6 +93,8 @@ namespace Rent
             }
         }
 
+
+
         private void minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -150,6 +152,21 @@ namespace Rent
         private void timer1_Tick(object sender, EventArgs e)
         {
             Hora.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MenuVertical_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void barraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
