@@ -50,7 +50,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(733, 36);
+            this.panel1.Size = new System.Drawing.Size(485, 36);
             this.panel1.TabIndex = 6;
             // 
             // Borrar
@@ -86,13 +86,14 @@
             this.Editar.TabIndex = 13;
             this.Editar.Text = "Editar";
             this.Editar.UseVisualStyleBackColor = false;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // cerrar
             // 
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(704, 5);
+            this.cerrar.Location = new System.Drawing.Point(456, 5);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(25, 25);
             this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -130,14 +131,14 @@
             this.Listado.Location = new System.Drawing.Point(12, 42);
             this.Listado.Name = "Listado";
             this.Listado.ReadOnly = true;
-            this.Listado.Size = new System.Drawing.Size(709, 350);
+            this.Listado.Size = new System.Drawing.Size(461, 350);
             this.Listado.TabIndex = 5;
             // 
             // Usuario_Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 404);
+            this.ClientSize = new System.Drawing.Size(485, 404);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Listado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

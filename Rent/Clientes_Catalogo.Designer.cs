@@ -96,7 +96,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            //this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(751, -3);
             this.button3.Name = "button3";
@@ -133,7 +133,7 @@
             // 
             // button5
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            //this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.Location = new System.Drawing.Point(666, 554);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(52, 64);
@@ -143,7 +143,7 @@
             // 
             // button4
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            //this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(764, 554);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(52, 64);
