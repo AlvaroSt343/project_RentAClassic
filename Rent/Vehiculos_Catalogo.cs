@@ -34,10 +34,28 @@ namespace Rent
             if (panelVehiculos.Width == 280)
             {
                 panelVehiculos.Width = 0;
+                Classic.Width = 0;
+                Classic.Location= new System.Drawing.Point(0,0);
+                Muscle.Width = 0;
+                Muscle.Location = new System.Drawing.Point(0, 0);
+                PickUp.Width = 0;
+                PickUp.Location = new System.Drawing.Point(0, 0);
+                Motorcycle.Width = 0;
+                Motorcycle.Location = new System.Drawing.Point(0, 0);
+                botonMenu.Location = new System.Drawing.Point(0, 0);
             }
             else
             {
                 panelVehiculos.Width = 280;
+                Classic.Width = 65;
+                Classic.Location = new System.Drawing.Point(0, 0);
+                Muscle.Width = 59;
+                Muscle.Location = new System.Drawing.Point(64, 0);
+                PickUp.Width = 72;
+                PickUp.Location = new System.Drawing.Point(122, 0);
+                Motorcycle.Width = 90;
+                Motorcycle.Location = new System.Drawing.Point(192, 0);
+                botonMenu.Location = new System.Drawing.Point(280, 0);
             }
         }
 
@@ -45,8 +63,7 @@ namespace Rent
         private void Classic_Click(object sender, EventArgs e)
         {
             panelVehiculos.Controls.Clear();
-            Variables.accion = "SELECT Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Classic' AND estatus='DISPONIBLE'";
-            EliminaBotones();
+            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Classic' AND estatus='DISPONIBLE'";
             LlenaLista();
             CreaBotones();
         }
@@ -54,8 +71,7 @@ namespace Rent
         private void Muscle_Click(object sender, EventArgs e)
         {
             panelVehiculos.Controls.Clear();
-            Variables.accion = "SELECT Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Muscle' AND estatus='DISPONIBLE'";
-            EliminaBotones();
+            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Muscle' AND estatus='DISPONIBLE'";
             LlenaLista();
             CreaBotones();
         }
@@ -63,8 +79,7 @@ namespace Rent
         private void PickUp_Click(object sender, EventArgs e)
         {
             panelVehiculos.Controls.Clear();
-            Variables.accion = "SELECT Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'PickUp' AND estatus='DISPONIBLE'";
-            EliminaBotones();
+            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'PickUp' AND estatus='DISPONIBLE'";
             LlenaLista();
             CreaBotones();
         }
@@ -72,8 +87,7 @@ namespace Rent
         private void Motorcycle_Click(object sender, EventArgs e)
         {
             panelVehiculos.Controls.Clear();
-            Variables.accion = "SELECT Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Motorcycle' AND estatus='DISPONIBLE'";
-            EliminaBotones();
+            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Motorcycle' AND estatus='DISPONIBLE'";
             LlenaLista();
             CreaBotones();
         }
@@ -86,6 +100,7 @@ namespace Rent
             {
                 arrbutton[x] = new Button();
                 arrbutton[x].Text = lista[x].DescripcionVehiculo.ToString();
+                arrbutton[x].Tag = lista[x].CodigoVehiculo.ToString();
                 arrbutton[x].Cursor = System.Windows.Forms.Cursors.Hand;
                 arrbutton[x].FlatAppearance.BorderSize = 0;
                 arrbutton[x].FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
@@ -100,7 +115,6 @@ namespace Rent
                 arrbutton[x].ForeColor = System.Drawing.Color.White;
                 this.panelVehiculos.Controls.Add(arrbutton[x]);
                 arrbutton[x].Click += new System.EventHandler(SelectAuto);
-
             }
         }
 
@@ -115,7 +129,8 @@ namespace Rent
             {
                 lista.Add(new datos()
                 {
-                    DescripcionVehiculo = Convert.ToString(reader[0]) + " " + Convert.ToString(reader[1]) + " " + Convert.ToString(reader[2])
+                    CodigoVehiculo = Convert.ToString(reader[0]),
+                    DescripcionVehiculo = Convert.ToString(reader[1]) + " " + Convert.ToString(reader[2]) + " " + Convert.ToString(reader[3])
                 });
             }
         }
@@ -123,29 +138,64 @@ namespace Rent
         private void SelectAuto(object sender, EventArgs e)
         {
             Button ax = (Button)sender;
-            MessageBox.Show(ax.Name);
+            Variables.accion = "SELECT * FROM vehiculos WHERE codigo='"+ ax.Tag.ToString() + "'";
+            ConsultaVehiculo();
+            titulo.Text = ax.Text;
+            ValidaEstatus();
+            panelContVehiculos.Visible = true;
+            string Ruta1= "C:\\Users\\Alvaro\\Documents\\RENTACLASSIC\\RENT PROJECT\\vehiculos\\marcas\\" + marca.Text + ".png";
+            string Ruta2 = "C:\\Users\\Alvaro\\Documents\\RENTACLASSIC\\RENT PROJECT\\vehiculos\\coches\\" + ax.Tag.ToString() + ".jpg";
+            logoMarca.ImageLocation = Ruta1;
+            Fotos.ImageLocation = Ruta2;
         }
 
-
-        private void EliminaBotones()
+        private void ConsultaVehiculo()
         {
-            
-            if (lista.Count > 0)
+            MyConnection nuevaConexion = new MyConnection();
+            nuevaConexion.abrirConexion();
+            MySqlCommand cmd = new MySqlCommand(Variables.accion, nuevaConexion.GetConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                for (x = 1; x <= lista.Count; x++)
-                {
-                    //Button btn1 = this.Controls.OfType<Button>().Where(c => c.Name.Equals("btn" + x)).First();
-                    Button boton = panelVehiculos.Controls.OfType<Button>().FirstOrDefault(x => x.Name == "btn" + x);
-                    panelVehiculos.Controls.Remove(boton);
-                }
+                marca.Text = Convert.ToString(reader[1]);
+                modelo.Text = Convert.ToString(reader[2]);
+                color.Text = Convert.ToString(reader[3]);
+                fabricacion.Text = Convert.ToString(reader[4]);
+                transmision.Text = Convert.ToString(reader[5]);
+                tipo.Text = Convert.ToString(reader[6]);
+                placa.Text = Convert.ToString(reader[7]);
+                descripcion.Text = Convert.ToString(reader[8]);
+
+                double PrecioxDia = Convert.ToDouble(reader[9]);
+                double PrecioxHora = (PrecioxDia / 24);
+
+                precioDia.Text = "$ " + PrecioxDia + "   M/N";
+                PrecioHora.Text = "$ " + PrecioxHora + "   M/N";
+                estatus.Text = Convert.ToString(reader[10]);
             }
-            
-            
+        }
+
+        private void ValidaEstatus()
+        {
+            if (estatus.Text == "DISPONIBLE")
+            {
+                estatus.ForeColor = Color.Green;
+            }
+            else
+            {
+                estatus.ForeColor = Color.Red;
+            }
+        }
+
+        private void Vehiculos_Catalogo_Load(object sender, EventArgs e)
+        {
+            panelContVehiculos.Visible = false;
         }
     }
 
     public class datos
     {
         public string DescripcionVehiculo { get; set; }
+        public string CodigoVehiculo { get; set; }
     }
 }
