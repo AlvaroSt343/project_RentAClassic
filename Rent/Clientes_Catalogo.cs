@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
+using Rent.Clases;
 namespace Rent
 {
     public partial class Clientes_Catalogo : Form
@@ -212,8 +213,104 @@ namespace Rent
             panelContenedor.Controls.Clear();
             panelContenedor.Hide();
             panelContenedor.Show();
-            //AbrirFormInPanel(new Clientes_Detalles());
+            AbrirFormInPanel(new Clientes_Info());
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            if (ValidaC() == "SI")
+            {
+
+
+                Variables.accion = " INSERT INTO clientes (CLAVE,NOMBRE, APELLIDO1, APELLIDO2, CELULAR1, CORREO, ID,CUENTA,CONTACTO,CELULAR2,ESTATUS ) Values"
+                + "(" + "'" +clave.Text+"','"+nombre.Text + "','" + apellido1.Text + "','" + apellido2.Text + "','" + telefono.Text + "','" + correo.Text +"','"+direccion.Text+"','"+cuentabanco.Text+"','"+nombreresponsable.Text+"','"+telefonoresponsable.Text +"','"+"Sin Rentas"+" ')";
+                    GuardaNuevoCliente();
+                    
+                
+
+            }
+            else
+            {
+                MessageBox.Show("Debe completar los campos!!", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void clave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private string ValidaC()
+        {
+            if (clave.Text != "" && nombre.Text != "" && apellido1.Text != "" && telefono.Text != "" && correo.Text != "" && direccion.Text != "" && cuentabanco.Text != "" && nombreresponsable.Text != "" && telefonoresponsable.Text != "")
+            {
+
+                return "SI";
+
+            }
+            else
+            {
+                return "NO";
+            }
+        }
+
+        private void GuardaNuevoCliente()
+        {
+
+            MyConnection cons = new MyConnection();
+            cons.abrirConexion();
+            MySqlCommand pro = new MySqlCommand(Variables.accion);
+            pro.Connection = cons.GetConexion();
+            pro.ExecuteNonQuery();
+            cons.cerrarConexion();
+            MessageBox.Show("Cliente guardado exitosamente", "Inserccion Exitosa!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            DialogResult result = MessageBox.Show("Desea agregar otro cliente", "Inserccion Exitosa!",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+             
+            }
+            else if (result == DialogResult.No)
+            {
+                panelContenedor.Show();
+                AbrirFormInPanel(new Clientes_Alta());
+                
+
+            }
+            CleanT();
+        }
+
+        public void CleanT() {
+            clave.Clear();
+            nombre.Clear();
+            apellido1.Clear();
+            apellido2.Clear();
+            telefono.Clear();
+            correo.Clear();
+            direccion.Clear();
+            cuentabanco.Clear();
+            nombreresponsable.Clear();
+            telefonoresponsable.Clear();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            CleanT();
         }
     }
 }

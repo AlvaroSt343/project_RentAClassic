@@ -72,6 +72,12 @@
     <Compile Include="Clientes_Catalogo.Designer.cs">
       <DependentUpon>Clientes_Catalogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clientes_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Info.Designer.cs">
+      <DependentUpon>Clientes_Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,15 @@
     <Compile Include="Vehiculos_Recepcion.Designer.cs">
       <DependentUpon>Vehiculos_Recepcion.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Clientes_Alta.resx">
+      <DependentUpon>Clientes_Alta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes_Catalogo.resx">
+      <DependentUpon>Clientes_Catalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes_Info.resx">
+      <DependentUpon>Clientes_Info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
