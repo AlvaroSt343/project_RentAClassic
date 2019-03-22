@@ -1,4 +1,6 @@
-﻿namespace Rent
+﻿using System;
+
+namespace Rent
 {
     partial class Login
     {
@@ -56,6 +58,7 @@
             this.USER.Name = "USER";
             this.USER.Size = new System.Drawing.Size(255, 19);
             this.USER.TabIndex = 0;
+           // this.USER.TextChanged += new System.EventHandler(this.USER_TextChanged);
             // 
             // pictureBox1
             // 
@@ -222,6 +225,8 @@
 
         }
 
+ 
+
         #endregion
 
         private System.Windows.Forms.TextBox USER;
@@ -236,5 +241,6 @@
         private System.Windows.Forms.Button Log;
         private System.Windows.Forms.PictureBox cerrar;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        
     }
 }

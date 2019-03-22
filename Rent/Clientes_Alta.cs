@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using Rent.Clases;
 
 namespace Rent
 {
@@ -15,13 +17,17 @@ namespace Rent
         public Clientes_Alta()
         {
             InitializeComponent();
-            
+
+            ConsultaCliente();
         }
+        
+
 
         private void Clientes_Alta_Load(object sender, EventArgs e)
         {
 
         }
+
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -45,9 +51,9 @@ namespace Rent
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            
-            
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -139,5 +145,32 @@ namespace Rent
         {
 
         }
+        private void ConsultaCliente()
+        {
+            Variables.accion = "SELECT CLAVE,NOMBRE,APELLIDO1,APELLIDO2,CELULAR1,CORREO,ID,CUENTA,CONTACTO,CELULAR2 FROM clientes ORDER BY CLAVE ASC ";
+            MyConnection nuevaConexion = new MyConnection();
+            nuevaConexion.abrirConexion();
+            MySqlCommand cmd = new MySqlCommand(Variables.accion, nuevaConexion.GetConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                clave.Text = Convert.ToString(reader[0]);
+                cliente.Text = Convert.ToString(reader[1]+" "+ reader[2]+" "+ reader[3]);
+                telefono.Text = Convert.ToString(reader[4]);
+                correo.Text = Convert.ToString(reader[5]);
+                direccion.Text = Convert.ToString(reader[6]);
+                cuentabanco.Text = Convert.ToString(reader[7]);
+                nombreresponsable.Text = Convert.ToString(reader[8]);
+                telefonoresponsable.Text = Convert.ToString(reader[9]);
+                carrosenrenta.Text = "0";
+                informacion.Text = "No se ha rentado ningun auto!!";
+
+            }
+        }
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+      
     }
 }

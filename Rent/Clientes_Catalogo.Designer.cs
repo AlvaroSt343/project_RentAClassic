@@ -30,8 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes_Catalogo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -59,18 +61,19 @@
             this.clave = new System.Windows.Forms.TextBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
@@ -79,31 +82,47 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(872, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 27);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(782, 8);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 23);
+            this.label13.TabIndex = 52;
+            this.label13.Text = "Clientes";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.button6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button6.Location = new System.Drawing.Point(486, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(178, 32);
+            this.button6.TabIndex = 51;
+            this.button6.Text = "Clientes";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(-2, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1232, 657);
             this.panel2.TabIndex = 50;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(77)))), ((int)(((byte)(116)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            //this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(751, -3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(250, 45);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Clientes";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -129,27 +148,30 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Estado";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
-            //this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.Location = new System.Drawing.Point(666, 554);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(52, 64);
             this.button5.TabIndex = 49;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Visible = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // button4
             // 
-            //this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(764, 554);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(52, 64);
             this.button4.TabIndex = 48;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // label12
             // 
@@ -166,10 +188,13 @@
             // telefonoresponsable
             // 
             this.telefonoresponsable.Location = new System.Drawing.Point(414, 474);
+            this.telefonoresponsable.MaxLength = 10;
             this.telefonoresponsable.Name = "telefonoresponsable";
             this.telefonoresponsable.Size = new System.Drawing.Size(183, 20);
             this.telefonoresponsable.TabIndex = 46;
             this.telefonoresponsable.Visible = false;
+            this.telefonoresponsable.TextChanged += new System.EventHandler(this.telefonoresponsable_TextChanged);
+            this.telefonoresponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefonoresponsable_KeyPress);
             // 
             // label10
             // 
@@ -298,6 +323,7 @@
             this.nombreresponsable.Size = new System.Drawing.Size(183, 20);
             this.nombreresponsable.TabIndex = 35;
             this.nombreresponsable.Visible = false;
+            this.nombreresponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreresponsable_KeyPress);
             // 
             // cuentabanco
             // 
@@ -306,6 +332,8 @@
             this.cuentabanco.Size = new System.Drawing.Size(183, 20);
             this.cuentabanco.TabIndex = 34;
             this.cuentabanco.Visible = false;
+            this.cuentabanco.TextChanged += new System.EventHandler(this.cuentabanco_TextChanged);
+            this.cuentabanco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cuentabanco_KeyPress);
             // 
             // direccion
             // 
@@ -330,14 +358,17 @@
             this.apellido2.Size = new System.Drawing.Size(133, 20);
             this.apellido2.TabIndex = 31;
             this.apellido2.Visible = false;
+            this.apellido2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apellido2_KeyPress);
             // 
             // telefono
             // 
             this.telefono.Location = new System.Drawing.Point(414, 257);
+            this.telefono.MaxLength = 10;
             this.telefono.Name = "telefono";
             this.telefono.Size = new System.Drawing.Size(183, 20);
             this.telefono.TabIndex = 30;
             this.telefono.Visible = false;
+            this.telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono_KeyPress);
             // 
             // nombre
             // 
@@ -346,6 +377,7 @@
             this.nombre.Size = new System.Drawing.Size(149, 20);
             this.nombre.TabIndex = 29;
             this.nombre.Visible = false;
+            this.nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombre_KeyPress);
             // 
             // apellido1
             // 
@@ -354,14 +386,18 @@
             this.apellido1.Size = new System.Drawing.Size(133, 20);
             this.apellido1.TabIndex = 28;
             this.apellido1.Visible = false;
+            this.apellido1.TextChanged += new System.EventHandler(this.apellido1_TextChanged);
+            this.apellido1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apellido1_KeyPress);
             // 
             // clave
             // 
             this.clave.Location = new System.Drawing.Point(414, 155);
             this.clave.Name = "clave";
+            this.clave.ReadOnly = true;
             this.clave.Size = new System.Drawing.Size(231, 20);
             this.clave.TabIndex = 27;
             this.clave.Visible = false;
+            this.clave.TextChanged += new System.EventHandler(this.clave_TextChanged);
             // 
             // panelContenedor
             // 
@@ -378,19 +414,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(722, 393);
             this.panel3.TabIndex = 52;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Location = new System.Drawing.Point(486, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(178, 32);
-            this.button6.TabIndex = 51;
-            this.button6.Text = "Clientes";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label11
             // 
@@ -437,6 +460,8 @@
             this.Name = "Clientes_Catalogo";
             this.Load += new System.EventHandler(this.Clientes_Catalogo_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,7 +473,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label12;
@@ -477,5 +501,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
