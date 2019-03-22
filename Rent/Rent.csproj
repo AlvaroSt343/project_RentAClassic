@@ -54,6 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busca_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busca_Cliente.Designer.cs">
+      <DependentUpon>Busca_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busca_Vehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busca_Vehiculos.Designer.cs">
+      <DependentUpon>Busca_Vehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\ConnectionSQL.cs" />
     <Compile Include="Clases\Consultas.cs" />
     <Compile Include="Clases\MyConnection.cs" />
@@ -134,12 +146,24 @@
     <Compile Include="Vehiculos_Catalogo.Designer.cs">
       <DependentUpon>Vehiculos_Catalogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vehiculos_CatalogoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculos_CatalogoUsuario.Designer.cs">
+      <DependentUpon>Vehiculos_CatalogoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehiculos_Recepcion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vehiculos_Recepcion.Designer.cs">
       <DependentUpon>Vehiculos_Recepcion.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Busca_Cliente.resx">
+      <DependentUpon>Busca_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busca_Vehiculos.resx">
+      <DependentUpon>Busca_Vehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vehiculos_Catalogo.resx">
       <DependentUpon>Vehiculos_Catalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculos_CatalogoUsuario.resx">
+      <DependentUpon>Vehiculos_CatalogoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

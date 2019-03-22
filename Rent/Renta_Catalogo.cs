@@ -25,6 +25,8 @@ namespace Rent
         {
             Variables.accion = "SELECT * FROM rentas";
             ConsultaListado();
+            Listado.ClearSelection();
+
         }
 
         private void cerrar_Click(object sender, EventArgs e)
@@ -34,8 +36,7 @@ namespace Rent
 
         private void nuevaRenta_Click(object sender, EventArgs e)
         {
-            Ralta.MdiParent = this.MdiParent;
-            Ralta.Show();
+            Ralta.ShowDialog();
         }
 
         private void ConsultaListado()
@@ -55,19 +56,5 @@ namespace Rent
             Reporte nuevoRpt = new Reporte();
             nuevoRpt.Show();
         }
-
-
-        //Consultas ejecuta = new Consultas();
-        //Variables.accion = "INSERT";
-        //    Variables.se_guardo=ejecuta.ejecutaAccion();
-        //    if (Variables.se_guardo == "SI")
-        //    {
-        //        MessageBox.Show("insercion correcta");
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("error");
-        //    }
-
     }
 }

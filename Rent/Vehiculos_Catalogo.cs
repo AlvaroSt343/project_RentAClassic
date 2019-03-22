@@ -59,7 +59,6 @@ namespace Rent
             }
         }
 
-
         private void Classic_Click(object sender, EventArgs e)
         {
             panelVehiculos.Controls.Clear();

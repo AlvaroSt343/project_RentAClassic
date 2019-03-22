@@ -109,9 +109,9 @@ namespace Rent
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Visible = false;
+            //this.Visible = false;
             Usuario_Alta nuevoUsser = new Usuario_Alta();
-            nuevoUsser.Show();
+            nuevoUsser.ShowDialog();
         }
     }
 }

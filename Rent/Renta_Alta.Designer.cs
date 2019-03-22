@@ -66,27 +66,27 @@
             this.editar = new System.Windows.Forms.Button();
             this.nuevaRenta = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.codigo = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.transmision = new System.Windows.Forms.ComboBox();
+            this.tipo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.descripcion = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.placa = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.fabricacion = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.modelo = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.color = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.marca = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -110,7 +110,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(159, 13);
+            this.label2.Location = new System.Drawing.Point(157, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 2;
@@ -148,7 +148,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(286, 48);
+            this.label19.Location = new System.Drawing.Point(284, 48);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(61, 13);
             this.label19.TabIndex = 9;
@@ -200,6 +200,7 @@
             this.Clientes.Size = new System.Drawing.Size(27, 27);
             this.Clientes.TabIndex = 5;
             this.Clientes.UseVisualStyleBackColor = false;
+            this.Clientes.Click += new System.EventHandler(this.Clientes_Click);
             // 
             // textBox1
             // 
@@ -432,6 +433,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1140, 36);
             this.panel4.TabIndex = 9;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // cerrar
             // 
@@ -513,55 +515,90 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.codigo);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.transmision);
+            this.panel2.Controls.Add(this.tipo);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox16);
+            this.panel2.Controls.Add(this.descripcion);
             this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.textBox15);
+            this.panel2.Controls.Add(this.placa);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.textBox13);
+            this.panel2.Controls.Add(this.fabricacion);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.textBox12);
+            this.panel2.Controls.Add(this.modelo);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.textBox11);
+            this.panel2.Controls.Add(this.color);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.label22);
-            this.panel2.Controls.Add(this.textBox14);
+            this.panel2.Controls.Add(this.marca);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Location = new System.Drawing.Point(12, 140);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(678, 255);
             this.panel2.TabIndex = 11;
             // 
-            // comboBox2
+            // codigo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.codigo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigo.Location = new System.Drawing.Point(88, 13);
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Size = new System.Drawing.Size(91, 25);
+            this.codigo.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(483, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(188, 159);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(77)))), ((int)(((byte)(116)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(194, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(27, 27);
+            this.button1.TabIndex = 26;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // transmision
+            // 
+            this.transmision.FormattingEnabled = true;
+            this.transmision.Items.AddRange(new object[] {
             "STANDARD",
             "AUTOMATIC"});
-            this.comboBox2.Location = new System.Drawing.Point(88, 129);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(155, 21);
-            this.comboBox2.TabIndex = 25;
+            this.transmision.Location = new System.Drawing.Point(88, 129);
+            this.transmision.Name = "transmision";
+            this.transmision.Size = new System.Drawing.Size(155, 21);
+            this.transmision.TabIndex = 25;
             // 
-            // comboBox1
+            // tipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.tipo.FormattingEnabled = true;
+            this.tipo.Items.AddRange(new object[] {
             "Classic",
             "Muscle",
             "PickUp",
             "Motorcycle"});
-            this.comboBox1.Location = new System.Drawing.Point(328, 54);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 21);
-            this.comboBox1.TabIndex = 24;
+            this.tipo.Location = new System.Drawing.Point(328, 54);
+            this.tipo.Name = "tipo";
+            this.tipo.Size = new System.Drawing.Size(130, 21);
+            this.tipo.TabIndex = 24;
             // 
             // label5
             // 
@@ -574,14 +611,14 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Tipo:";
             // 
-            // textBox16
+            // descripcion
             // 
-            this.textBox16.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(87, 175);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(585, 57);
-            this.textBox16.TabIndex = 19;
+            this.descripcion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descripcion.Location = new System.Drawing.Point(87, 175);
+            this.descripcion.Multiline = true;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Size = new System.Drawing.Size(585, 57);
+            this.descripcion.TabIndex = 19;
             // 
             // label17
             // 
@@ -594,13 +631,13 @@
             this.label17.TabIndex = 18;
             this.label17.Text = "Descripcion:";
             // 
-            // textBox15
+            // placa
             // 
-            this.textBox15.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(328, 86);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(130, 25);
-            this.textBox15.TabIndex = 17;
+            this.placa.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.placa.Location = new System.Drawing.Point(328, 86);
+            this.placa.Name = "placa";
+            this.placa.Size = new System.Drawing.Size(130, 25);
+            this.placa.TabIndex = 17;
             // 
             // label16
             // 
@@ -635,13 +672,13 @@
             this.label14.TabIndex = 13;
             this.label14.Text = "Trasmision:";
             // 
-            // textBox13
+            // fabricacion
             // 
-            this.textBox13.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(328, 123);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(97, 25);
-            this.textBox13.TabIndex = 12;
+            this.fabricacion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fabricacion.Location = new System.Drawing.Point(328, 123);
+            this.fabricacion.Name = "fabricacion";
+            this.fabricacion.Size = new System.Drawing.Size(97, 25);
+            this.fabricacion.TabIndex = 12;
             // 
             // label13
             // 
@@ -654,13 +691,13 @@
             this.label13.TabIndex = 11;
             this.label13.Text = "Año:";
             // 
-            // textBox12
+            // modelo
             // 
-            this.textBox12.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(87, 86);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(171, 25);
-            this.textBox12.TabIndex = 10;
+            this.modelo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modelo.Location = new System.Drawing.Point(87, 86);
+            this.modelo.Name = "modelo";
+            this.modelo.Size = new System.Drawing.Size(171, 25);
+            this.modelo.TabIndex = 10;
             // 
             // label12
             // 
@@ -673,13 +710,13 @@
             this.label12.TabIndex = 9;
             this.label12.Text = "Modelo:";
             // 
-            // textBox11
+            // color
             // 
-            this.textBox11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(328, 15);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(130, 25);
-            this.textBox11.TabIndex = 8;
+            this.color.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.color.Location = new System.Drawing.Point(328, 15);
+            this.color.Name = "color";
+            this.color.Size = new System.Drawing.Size(130, 25);
+            this.color.TabIndex = 8;
             // 
             // label11
             // 
@@ -692,15 +729,6 @@
             this.label11.TabIndex = 7;
             this.label11.Text = "Color:";
             // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(88, 13);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(91, 25);
-            this.textBox5.TabIndex = 3;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -712,13 +740,13 @@
             this.label22.TabIndex = 2;
             this.label22.Text = "Codigo:";
             // 
-            // textBox14
+            // marca
             // 
-            this.textBox14.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(88, 50);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(170, 25);
-            this.textBox14.TabIndex = 3;
+            this.marca.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marca.Location = new System.Drawing.Point(88, 50);
+            this.marca.Name = "marca";
+            this.marca.Size = new System.Drawing.Size(170, 25);
+            this.marca.TabIndex = 3;
             // 
             // label23
             // 
@@ -726,31 +754,6 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(41, 20);
             this.label23.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(77)))), ((int)(((byte)(116)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(194, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 27);
-            this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(483, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
             // 
             // Renta_Alta
             // 
@@ -787,7 +790,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Clientes;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;
@@ -797,7 +799,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DateTimePicker devolucion;
         private System.Windows.Forms.DateTimePicker entrega;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label9;
@@ -819,26 +820,28 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.ComboBox transmision;
+        public System.Windows.Forms.ComboBox tipo;
+        public System.Windows.Forms.TextBox descripcion;
+        public System.Windows.Forms.TextBox placa;
+        public System.Windows.Forms.TextBox fabricacion;
+        public System.Windows.Forms.TextBox modelo;
+        public System.Windows.Forms.TextBox color;
+        public System.Windows.Forms.TextBox codigo;
+        public System.Windows.Forms.TextBox marca;
     }
 }
