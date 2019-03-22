@@ -193,6 +193,8 @@
             this.telefonoresponsable.Size = new System.Drawing.Size(183, 20);
             this.telefonoresponsable.TabIndex = 46;
             this.telefonoresponsable.Visible = false;
+            this.telefonoresponsable.TextChanged += new System.EventHandler(this.telefonoresponsable_TextChanged);
+            this.telefonoresponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefonoresponsable_KeyPress);
             // 
             // label10
             // 
@@ -321,6 +323,7 @@
             this.nombreresponsable.Size = new System.Drawing.Size(183, 20);
             this.nombreresponsable.TabIndex = 35;
             this.nombreresponsable.Visible = false;
+            this.nombreresponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreresponsable_KeyPress);
             // 
             // cuentabanco
             // 
@@ -329,6 +332,8 @@
             this.cuentabanco.Size = new System.Drawing.Size(183, 20);
             this.cuentabanco.TabIndex = 34;
             this.cuentabanco.Visible = false;
+            this.cuentabanco.TextChanged += new System.EventHandler(this.cuentabanco_TextChanged);
+            this.cuentabanco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cuentabanco_KeyPress);
             // 
             // direccion
             // 
@@ -353,6 +358,7 @@
             this.apellido2.Size = new System.Drawing.Size(133, 20);
             this.apellido2.TabIndex = 31;
             this.apellido2.Visible = false;
+            this.apellido2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apellido2_KeyPress);
             // 
             // telefono
             // 
@@ -362,6 +368,7 @@
             this.telefono.Size = new System.Drawing.Size(183, 20);
             this.telefono.TabIndex = 30;
             this.telefono.Visible = false;
+            this.telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono_KeyPress);
             // 
             // nombre
             // 
@@ -370,6 +377,7 @@
             this.nombre.Size = new System.Drawing.Size(149, 20);
             this.nombre.TabIndex = 29;
             this.nombre.Visible = false;
+            this.nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombre_KeyPress);
             // 
             // apellido1
             // 
@@ -378,11 +386,14 @@
             this.apellido1.Size = new System.Drawing.Size(133, 20);
             this.apellido1.TabIndex = 28;
             this.apellido1.Visible = false;
+            this.apellido1.TextChanged += new System.EventHandler(this.apellido1_TextChanged);
+            this.apellido1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apellido1_KeyPress);
             // 
             // clave
             // 
             this.clave.Location = new System.Drawing.Point(414, 155);
             this.clave.Name = "clave";
+            this.clave.ReadOnly = true;
             this.clave.Size = new System.Drawing.Size(231, 20);
             this.clave.TabIndex = 27;
             this.clave.Visible = false;
