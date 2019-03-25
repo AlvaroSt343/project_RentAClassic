@@ -62,8 +62,10 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,6 +121,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(-2, 38);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1232, 657);
@@ -426,6 +429,13 @@
             this.label11.Text = "Agregar Nuevo cliente";
             this.label11.Visible = false;
             // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(0, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1229, 654);
+            this.panel4.TabIndex = 51;
+            // 
             // Clientes_Catalogo
             // 
             this.ClientSize = new System.Drawing.Size(1231, 699);
@@ -462,6 +472,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,5 +514,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel4;
     }
 }

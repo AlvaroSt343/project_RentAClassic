@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes_Alta));
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cliente = new System.Windows.Forms.TextBox();
@@ -37,24 +40,28 @@
             this.telefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.nombreresponsable = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.carrosenrenta = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.informacion = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.correo = new System.Windows.Forms.TextBox();
-            this.direccion = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.telefonoresponsable = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.cuentabanco = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.direccion = new System.Windows.Forms.TextBox();
+            this.correo = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.verinfo = new System.Windows.Forms.DataGridView();
+            this.Folio = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rentas = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cerrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.verinfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Folio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -134,7 +141,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(16, 31);
+            this.label4.Location = new System.Drawing.Point(6, 325);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 26);
             this.label4.TabIndex = 59;
@@ -144,61 +151,22 @@
             // nombreresponsable
             // 
             this.nombreresponsable.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.nombreresponsable.Location = new System.Drawing.Point(136, 35);
+            this.nombreresponsable.Location = new System.Drawing.Point(99, 329);
             this.nombreresponsable.Name = "nombreresponsable";
             this.nombreresponsable.ReadOnly = true;
-            this.nombreresponsable.Size = new System.Drawing.Size(108, 20);
+            this.nombreresponsable.Size = new System.Drawing.Size(153, 20);
             this.nombreresponsable.TabIndex = 60;
             this.nombreresponsable.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(15, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "Autos en renta";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // carrosenrenta
-            // 
-            this.carrosenrenta.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.carrosenrenta.Location = new System.Drawing.Point(148, 24);
-            this.carrosenrenta.Name = "carrosenrenta";
-            this.carrosenrenta.ReadOnly = true;
-            this.carrosenrenta.Size = new System.Drawing.Size(100, 20);
-            this.carrosenrenta.TabIndex = 64;
-            this.carrosenrenta.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(15, 107);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
-            this.label7.TabIndex = 65;
-            this.label7.Text = "Informacion";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // informacion
-            // 
-            this.informacion.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.informacion.Location = new System.Drawing.Point(18, 136);
-            this.informacion.Multiline = true;
-            this.informacion.Name = "informacion";
-            this.informacion.ReadOnly = true;
-            this.informacion.Size = new System.Drawing.Size(266, 295);
-            this.informacion.TabIndex = 66;
-            this.informacion.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.telefonoresponsable);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.cuentabanco);
             this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.nombreresponsable);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.direccion);
             this.panel1.Controls.Add(this.correo);
             this.panel1.Controls.Add(this.label9);
@@ -209,95 +177,31 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cliente);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(39, 84);
+            this.panel1.Location = new System.Drawing.Point(18, 84);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 318);
+            this.panel1.Size = new System.Drawing.Size(284, 431);
             this.panel1.TabIndex = 67;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
-            // panel2
+            // telefonoresponsable
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.panel2.Controls.Add(this.telefonoresponsable);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.nombreresponsable);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(355, 84);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 285);
-            this.panel2.TabIndex = 68;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.panel3.Controls.Add(this.informacion);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.carrosenrenta);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(738, 84);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(301, 459);
-            this.panel3.TabIndex = 69;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(18, 180);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 59;
-            this.label8.Text = "Correo";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(18, 234);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 13);
-            this.label9.TabIndex = 60;
-            this.label9.Text = "Direccion";
-            // 
-            // correo
-            // 
-            this.correo.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.correo.Location = new System.Drawing.Point(99, 180);
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            this.correo.Size = new System.Drawing.Size(153, 20);
-            this.correo.TabIndex = 61;
-            // 
-            // direccion
-            // 
-            this.direccion.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.direccion.Location = new System.Drawing.Point(99, 227);
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            this.direccion.Size = new System.Drawing.Size(153, 20);
-            this.direccion.TabIndex = 62;
+            this.telefonoresponsable.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.telefonoresponsable.Location = new System.Drawing.Point(99, 374);
+            this.telefonoresponsable.Name = "telefonoresponsable";
+            this.telefonoresponsable.ReadOnly = true;
+            this.telefonoresponsable.Size = new System.Drawing.Size(153, 20);
+            this.telefonoresponsable.TabIndex = 62;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(35, 116);
+            this.label5.Location = new System.Drawing.Point(19, 377);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 61;
             this.label5.Text = "Telefono";
             this.label5.Click += new System.EventHandler(this.label5_Click_1);
-            // 
-            // telefonoresponsable
-            // 
-            this.telefonoresponsable.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.telefonoresponsable.Location = new System.Drawing.Point(136, 113);
-            this.telefonoresponsable.Name = "telefonoresponsable";
-            this.telefonoresponsable.ReadOnly = true;
-            this.telefonoresponsable.Size = new System.Drawing.Size(108, 20);
-            this.telefonoresponsable.TabIndex = 62;
             // 
             // cuentabanco
             // 
@@ -318,26 +222,173 @@
             this.label10.TabIndex = 63;
             this.label10.Text = "Cuenta bancaria";
             // 
+            // direccion
+            // 
+            this.direccion.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.direccion.Location = new System.Drawing.Point(99, 227);
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Size = new System.Drawing.Size(153, 20);
+            this.direccion.TabIndex = 62;
+            // 
+            // correo
+            // 
+            this.correo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.correo.Location = new System.Drawing.Point(99, 180);
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            this.correo.Size = new System.Drawing.Size(153, 20);
+            this.correo.TabIndex = 61;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(18, 234);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 60;
+            this.label9.Text = "Direccion";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(18, 180);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "Correo";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.verinfo);
+            this.panel3.Controls.Add(this.Folio);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.rentas);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Location = new System.Drawing.Point(319, 84);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(900, 431);
+            this.panel3.TabIndex = 78;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(15, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 68;
+            this.label6.Text = "Folio de renta";
+            // 
+            // verinfo
+            // 
+            this.verinfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.verinfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.verinfo.Location = new System.Drawing.Point(204, 125);
+            this.verinfo.Name = "verinfo";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.verinfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.verinfo.RowHeadersVisible = false;
+            this.verinfo.Size = new System.Drawing.Size(682, 251);
+            this.verinfo.TabIndex = 67;
+            this.verinfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.verinfo_CellContentClick);
+            // 
+            // Folio
+            // 
+            this.Folio.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.Folio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Folio.Location = new System.Drawing.Point(18, 125);
+            this.Folio.Name = "Folio";
+            this.Folio.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Folio.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.Folio.RowHeadersVisible = false;
+            this.Folio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Folio.Size = new System.Drawing.Size(171, 249);
+            this.Folio.TabIndex = 66;
+            this.Folio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Folio_CellContentClick);
+            this.Folio.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Folio_MouseClick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(201, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.TabIndex = 65;
+            this.label7.Text = "Informacion";
+            // 
+            // rentas
+            // 
+            this.rentas.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rentas.Location = new System.Drawing.Point(148, 24);
+            this.rentas.Name = "rentas";
+            this.rentas.ReadOnly = true;
+            this.rentas.Size = new System.Drawing.Size(100, 20);
+            this.rentas.TabIndex = 64;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label12.Location = new System.Drawing.Point(15, 27);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 13);
+            this.label12.TabIndex = 63;
+            this.label12.Text = "Autos  rentados";
+            // 
+            // cerrar
+            // 
+            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
+            this.cerrar.Location = new System.Drawing.Point(1194, 9);
+            this.cerrar.Name = "cerrar";
+            this.cerrar.Size = new System.Drawing.Size(25, 25);
+            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cerrar.TabIndex = 79;
+            this.cerrar.TabStop = false;
+            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
+            // 
             // Clientes_Alta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1247, 738);
+            this.ClientSize = new System.Drawing.Size(1231, 610);
+            this.Controls.Add(this.cerrar);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(53, 50);
+            this.Location = new System.Drawing.Point(55, 90);
             this.Name = "Clientes_Alta";
-            //this.Text = "Clientes_Alta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Tag = "";
             this.Load += new System.EventHandler(this.Clientes_Alta_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.verinfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Folio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,13 +405,7 @@
         private System.Windows.Forms.TextBox telefono;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox nombreresponsable;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox carrosenrenta;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox informacion;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox direccion;
         private System.Windows.Forms.TextBox correo;
         private System.Windows.Forms.Label label9;
@@ -369,5 +414,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox cuentabanco;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView verinfo;
+        private System.Windows.Forms.DataGridView Folio;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox rentas;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox cerrar;
     }
 }
