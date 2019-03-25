@@ -15,6 +15,8 @@ namespace Rent
 {
     public partial class Busca_Vehiculos : Form 
     {
+        public Interface1 inter { get; set; }
+
         public Busca_Vehiculos()
         {
             InitializeComponent();
@@ -50,11 +52,9 @@ namespace Rent
         }
 
         private void Listado_DoubleClick(object sender, EventArgs e)
-        {            
-            MessageBox.Show(Listado.CurrentRow.Cells[0].Value.ToString());
-
-            //Application.OpenForms["Renta_Alta"].Focus();
-            //Application.OpenForms["Renta_Alta"].c;
+        {
+            inter.ConsultaVehiculo(Listado.CurrentRow.Cells[0].Value.ToString());
+            this.Close();
         }
 
         private void cerrar_Click(object sender, EventArgs e)

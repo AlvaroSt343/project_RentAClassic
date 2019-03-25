@@ -34,5 +34,20 @@ namespace Rent.Clases
             }
         }
 
+        public string ConsultaFolio(string laTabla)
+        {
+            string x = "";
+            Variables.accion = "SELECT folio FROM " + laTabla;
+            MyConnection nuevaConexion = new MyConnection();
+            nuevaConexion.abrirConexion();
+            MySqlCommand cmd = new MySqlCommand(Variables.accion, nuevaConexion.GetConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                x = reader[0].ToString();
+            }
+            return x;
+        }
+
     }
 }

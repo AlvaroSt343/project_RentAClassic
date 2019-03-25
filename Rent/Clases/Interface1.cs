@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rent.Clases
 {
-    interface Interface1
+    public interface Interface1
     {
         void ConsultaCliente(string laClave);
+        void ConsultaVehiculo(string elCodigo);
     }
 }

@@ -15,6 +15,8 @@ namespace Rent
 {
     public partial class Busca_Cliente : Form
     {
+        public Interface1 inter { get; set; }
+
         public Busca_Cliente()
         {
             InitializeComponent();
@@ -51,26 +53,11 @@ namespace Rent
 
         private void Listado_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Variables.laClaveEspecial = Listado.CurrentRow.Cells[0].Value.ToString();
-            ConsultaCliente();
+            inter.ConsultaCliente(Convert.ToString(Listado.CurrentRow.Cells[0].Value));
+            this.Close();
         }
 
-        public void ConsultaCliente()
-        {
-            Variables.accion = "SELECT cliente, correo, telefono FROM clientes WHERE clave='" + Variables.laClaveEspecial + "'";
-
-            MyConnection nuevaConexion = new MyConnection();
-            nuevaConexion.abrirConexion();
-            MySqlCommand cmd = new MySqlCommand(Variables.accion, nuevaConexion.GetConexion());
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                Variables.CLAVE = Variables.laClaveEspecial;
-                Variables.CLIENTE = Convert.ToString(reader[0]);
-                Variables.CORREO = Convert.ToString(reader[1]);
-                Variables.TELEFONO = Convert.ToString(reader[2]);
-            }
-        }
+        
 
         private void cerrar_Click(object sender, EventArgs e)
         {

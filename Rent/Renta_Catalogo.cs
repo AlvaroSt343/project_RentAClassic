@@ -43,10 +43,10 @@ namespace Rent
         {
             MyConnection conecta = new MyConnection();
             conecta.abrirConexion();
-            MySqlCommand buscaproductos = new MySqlCommand(Variables.accion, conecta.GetConexion());
-            MySqlDataAdapter cmc = new MySqlDataAdapter(buscaproductos);
+            MySqlCommand buscaRentas = new MySqlCommand(Variables.accion, conecta.GetConexion());
+            MySqlDataAdapter cmc = new MySqlDataAdapter(buscaRentas);
             DataSet tht = new DataSet();
-            buscaproductos.Connection = conecta.GetConexion();
+            buscaRentas.Connection = conecta.GetConexion();
             cmc.Fill(tht, "Listado");
             Listado.DataSource = tht.Tables["Listado"].DefaultView;
         }
@@ -54,7 +54,7 @@ namespace Rent
         private void visualizar_Click(object sender, EventArgs e)
         {
             Reporte nuevoRpt = new Reporte();
-            nuevoRpt.Show();
+            nuevoRpt.ShowDialog();
         }
     }
 }
