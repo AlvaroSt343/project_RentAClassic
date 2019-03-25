@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Renta_Alta));
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.telefono = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.correo = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Clientes = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.editar = new System.Windows.Forms.Button();
-            this.nuevaRenta = new System.Windows.Forms.Button();
+            this.GuardayConfirma = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.codigo = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -97,13 +97,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox2
+            // cliente
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(207, 13);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(325, 25);
-            this.textBox2.TabIndex = 3;
+            this.cliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cliente.Location = new System.Drawing.Point(207, 13);
+            this.cliente.Name = "cliente";
+            this.cliente.Size = new System.Drawing.Size(325, 25);
+            this.cliente.TabIndex = 3;
             // 
             // label2
             // 
@@ -120,28 +120,28 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox18);
+            this.panel1.Controls.Add(this.telefono);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.textBox17);
+            this.panel1.Controls.Add(this.correo);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.Clientes);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.Clave);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.cliente);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 47);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(678, 87);
             this.panel1.TabIndex = 6;
             // 
-            // textBox18
+            // telefono
             // 
-            this.textBox18.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(345, 48);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(187, 25);
-            this.textBox18.TabIndex = 10;
+            this.telefono.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telefono.Location = new System.Drawing.Point(345, 48);
+            this.telefono.Name = "telefono";
+            this.telefono.Size = new System.Drawing.Size(187, 25);
+            this.telefono.TabIndex = 10;
             // 
             // label19
             // 
@@ -154,13 +154,13 @@
             this.label19.TabIndex = 9;
             this.label19.Text = "Telefono:";
             // 
-            // textBox17
+            // correo
             // 
-            this.textBox17.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(58, 50);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(222, 25);
-            this.textBox17.TabIndex = 8;
+            this.correo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.correo.Location = new System.Drawing.Point(58, 50);
+            this.correo.Name = "correo";
+            this.correo.Size = new System.Drawing.Size(222, 25);
+            this.correo.TabIndex = 8;
             // 
             // label18
             // 
@@ -202,13 +202,13 @@
             this.Clientes.UseVisualStyleBackColor = false;
             this.Clientes.Click += new System.EventHandler(this.Clientes_Click);
             // 
-            // textBox1
+            // Clave
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(58, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(74, 25);
-            this.textBox1.TabIndex = 3;
+            this.Clave.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Clave.Location = new System.Drawing.Point(58, 13);
+            this.Clave.Name = "Clave";
+            this.Clave.Size = new System.Drawing.Size(74, 25);
+            this.Clave.TabIndex = 3;
             // 
             // label1
             // 
@@ -454,7 +454,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.editar);
-            this.panel5.Controls.Add(this.nuevaRenta);
+            this.panel5.Controls.Add(this.GuardayConfirma);
             this.panel5.Location = new System.Drawing.Point(696, 316);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(432, 79);
@@ -494,22 +494,23 @@
             this.editar.Text = "Imprimir";
             this.editar.UseVisualStyleBackColor = false;
             // 
-            // nuevaRenta
+            // GuardayConfirma
             // 
-            this.nuevaRenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
-            this.nuevaRenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nuevaRenta.FlatAppearance.BorderSize = 0;
-            this.nuevaRenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.nuevaRenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.nuevaRenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nuevaRenta.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuevaRenta.ForeColor = System.Drawing.Color.White;
-            this.nuevaRenta.Location = new System.Drawing.Point(3, 3);
-            this.nuevaRenta.Name = "nuevaRenta";
-            this.nuevaRenta.Size = new System.Drawing.Size(242, 70);
-            this.nuevaRenta.TabIndex = 16;
-            this.nuevaRenta.Text = "Guardar y Confirmar";
-            this.nuevaRenta.UseVisualStyleBackColor = false;
+            this.GuardayConfirma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
+            this.GuardayConfirma.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GuardayConfirma.FlatAppearance.BorderSize = 0;
+            this.GuardayConfirma.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.GuardayConfirma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.GuardayConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GuardayConfirma.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardayConfirma.ForeColor = System.Drawing.Color.White;
+            this.GuardayConfirma.Location = new System.Drawing.Point(3, 3);
+            this.GuardayConfirma.Name = "GuardayConfirma";
+            this.GuardayConfirma.Size = new System.Drawing.Size(242, 70);
+            this.GuardayConfirma.TabIndex = 16;
+            this.GuardayConfirma.Text = "Guardar y Confirmar";
+            this.GuardayConfirma.UseVisualStyleBackColor = false;
+            this.GuardayConfirma.Click += new System.EventHandler(this.GuardayConfirma_Click);
             // 
             // panel2
             // 
@@ -806,16 +807,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox10;
-        public System.Windows.Forms.TextBox textBox2;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox cliente;
+        public System.Windows.Forms.TextBox Clave;
         private System.Windows.Forms.PictureBox pictureBox2;
-        public System.Windows.Forms.TextBox textBox17;
+        public System.Windows.Forms.TextBox correo;
         private System.Windows.Forms.Label label18;
-        public System.Windows.Forms.TextBox textBox18;
+        public System.Windows.Forms.TextBox telefono;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button editar;
-        private System.Windows.Forms.Button nuevaRenta;
+        private System.Windows.Forms.Button GuardayConfirma;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;

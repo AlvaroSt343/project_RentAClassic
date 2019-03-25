@@ -20,13 +20,17 @@ namespace Rent.Clases
         public static string se_guardo { get; set; }
 
         //variables de clientes
-        public static int CLAVE { get; set; }
+        public static string CLAVE { get; set; }
         public static string CLIENTE { get; set; }
-        public static int TELEFONO { get; set; }
+        public static string TELEFONO { get; set; }
         public static string CORREO { get; set; }
         public static string DIRECCION { get; set; }
         public static int CUENTA { get; set; }
         public static string RESPOMNSABLE { get; set; } 
         public static int TELRESPONSABLLE { get; set; }
+
+        public static string laClaveEspecial { get; set; }
+
+
     }
 }

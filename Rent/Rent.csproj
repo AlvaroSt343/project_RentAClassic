@@ -90,6 +90,7 @@
     <Compile Include="Clientes_Info.Designer.cs">
       <DependentUpon>Clientes_Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfazBusquedaCliente.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

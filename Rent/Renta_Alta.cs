@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Rent.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,18 +39,29 @@ namespace Rent
             clientes.Show();
         }
 
-        public  void asignacodigo(int x)
-        {
-            //codigo.Text = x;
-        }
-
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }
-        public void escribir(string l)
+
+        private void GuardayConfirma_Click(object sender, EventArgs e)
         {
-            codigo.Text = l; 
+            //Variables.accion = "INSERT INTO usuarios (NOMBRE, USER, PASS, PERFIL, ESTATUS ) Values"
+            //            + "(" + "'" + Nombre.Text + "','" + Usuario.Text + "','" + pass.Text + "',' ADMIN','1')";
+            //Guardarenta();
         }
+
+        private void GuardaRenta()
+        {
+            MyConnection cons = new MyConnection();
+            cons.abrirConexion();
+            MySqlCommand pro = new MySqlCommand(Variables.accion);
+            pro.Connection = cons.GetConexion();
+            pro.ExecuteNonQuery();
+            cons.cerrarConexion();
+            MessageBox.Show("Usuario guardado exitosamente", "Inserccion Exitosa!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        
     }
 }

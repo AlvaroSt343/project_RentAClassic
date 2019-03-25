@@ -51,10 +51,25 @@ namespace Rent
 
         private void Listado_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //manda datos a form anterior
+            Variables.laClaveEspecial = Listado.CurrentRow.Cells[0].Value.ToString();
+            ConsultaCliente();
+        }
 
-            MessageBox.Show(Listado.CurrentRow.Cells[0].Value.ToString());
-            //Renta_Alta.codigo.Text = Listado.CurrentRow.Cells[0].Value.ToString();
+        public void ConsultaCliente()
+        {
+            Variables.accion = "SELECT cliente, correo, telefono FROM clientes WHERE clave='" + Variables.laClaveEspecial + "'";
+
+            MyConnection nuevaConexion = new MyConnection();
+            nuevaConexion.abrirConexion();
+            MySqlCommand cmd = new MySqlCommand(Variables.accion, nuevaConexion.GetConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Variables.CLAVE = Variables.laClaveEspecial;
+                Variables.CLIENTE = Convert.ToString(reader[0]);
+                Variables.CORREO = Convert.ToString(reader[1]);
+                Variables.TELEFONO = Convert.ToString(reader[2]);
+            }
         }
 
         private void cerrar_Click(object sender, EventArgs e)
