@@ -25,6 +25,8 @@ namespace Rent
         {
             Variables.accion = "SELECT * FROM rentas";
             ConsultaListado();
+            Listado.ClearSelection();
+
         }
 
         private void cerrar_Click(object sender, EventArgs e)
@@ -34,18 +36,17 @@ namespace Rent
 
         private void nuevaRenta_Click(object sender, EventArgs e)
         {
-            Ralta.MdiParent = this.MdiParent;
-            Ralta.Show();
+            Ralta.ShowDialog();
         }
 
         private void ConsultaListado()
         {
             MyConnection conecta = new MyConnection();
             conecta.abrirConexion();
-            MySqlCommand buscaproductos = new MySqlCommand(Variables.accion, conecta.GetConexion());
-            MySqlDataAdapter cmc = new MySqlDataAdapter(buscaproductos);
+            MySqlCommand buscaRentas = new MySqlCommand(Variables.accion, conecta.GetConexion());
+            MySqlDataAdapter cmc = new MySqlDataAdapter(buscaRentas);
             DataSet tht = new DataSet();
-            buscaproductos.Connection = conecta.GetConexion();
+            buscaRentas.Connection = conecta.GetConexion();
             cmc.Fill(tht, "Listado");
             Listado.DataSource = tht.Tables["Listado"].DefaultView;
         }
@@ -53,21 +54,7 @@ namespace Rent
         private void visualizar_Click(object sender, EventArgs e)
         {
             Reporte nuevoRpt = new Reporte();
-            nuevoRpt.Show();
+            nuevoRpt.ShowDialog();
         }
-
-
-        //Consultas ejecuta = new Consultas();
-        //Variables.accion = "INSERT";
-        //    Variables.se_guardo=ejecuta.ejecutaAccion();
-        //    if (Variables.se_guardo == "SI")
-        //    {
-        //        MessageBox.Show("insercion correcta");
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("error");
-        //    }
-
     }
 }

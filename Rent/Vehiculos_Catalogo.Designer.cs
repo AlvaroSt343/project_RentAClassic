@@ -38,6 +38,10 @@
             this.botonMenu = new System.Windows.Forms.PictureBox();
             this.panelVehiculos = new System.Windows.Forms.Panel();
             this.panelContVehiculos = new System.Windows.Forms.Panel();
+            this.PrecioHora = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.precioDia = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.descripcion = new System.Windows.Forms.TextBox();
             this.estatus = new System.Windows.Forms.Label();
             this.placa = new System.Windows.Forms.Label();
@@ -60,10 +64,6 @@
             this.logoMarca = new System.Windows.Forms.PictureBox();
             this.titulo = new System.Windows.Forms.Label();
             this.Rentar = new System.Windows.Forms.Button();
-            this.precioDia = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.PrecioHora = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).BeginInit();
@@ -84,7 +84,7 @@
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(1540, 33);
+            this.panelTitulo.Size = new System.Drawing.Size(1386, 33);
             this.panelTitulo.TabIndex = 1;
             // 
             // Muscle
@@ -152,7 +152,7 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(1508, 1);
+            this.cerrar.Location = new System.Drawing.Point(1354, 1);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(30, 30);
             this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -212,8 +212,54 @@
             this.panelContVehiculos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContVehiculos.Location = new System.Drawing.Point(280, 33);
             this.panelContVehiculos.Name = "panelContVehiculos";
-            this.panelContVehiculos.Size = new System.Drawing.Size(1260, 755);
+            this.panelContVehiculos.Size = new System.Drawing.Size(1106, 755);
             this.panelContVehiculos.TabIndex = 4;
+            // 
+            // PrecioHora
+            // 
+            this.PrecioHora.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.PrecioHora.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecioHora.ForeColor = System.Drawing.Color.Green;
+            this.PrecioHora.Location = new System.Drawing.Point(671, 611);
+            this.PrecioHora.Name = "PrecioHora";
+            this.PrecioHora.Size = new System.Drawing.Size(408, 38);
+            this.PrecioHora.TabIndex = 42;
+            this.PrecioHora.Text = "$ 0.00";
+            this.PrecioHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label12.Location = new System.Drawing.Point(674, 582);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(154, 26);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Precio por Hora:";
+            // 
+            // precioDia
+            // 
+            this.precioDia.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.precioDia.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precioDia.ForeColor = System.Drawing.Color.Green;
+            this.precioDia.Location = new System.Drawing.Point(671, 544);
+            this.precioDia.Name = "precioDia";
+            this.precioDia.Size = new System.Drawing.Size(408, 38);
+            this.precioDia.TabIndex = 40;
+            this.precioDia.Text = "$ 0.00";
+            this.precioDia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label11.Location = new System.Drawing.Point(674, 515);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(154, 26);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Precio por Dia:";
             // 
             // descripcion
             // 
@@ -383,7 +429,8 @@
             // Fotos
             // 
             this.Fotos.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Fotos.Location = new System.Drawing.Point(825, 173);
+            this.Fotos.ErrorImage = null;
+            this.Fotos.Location = new System.Drawing.Point(671, 173);
             this.Fotos.Name = "Fotos";
             this.Fotos.Size = new System.Drawing.Size(408, 330);
             this.Fotos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -392,6 +439,7 @@
             // 
             // logoMarca
             // 
+            this.logoMarca.ErrorImage = ((System.Drawing.Image)(resources.GetObject("logoMarca.ErrorImage")));
             this.logoMarca.Location = new System.Drawing.Point(6, 8);
             this.logoMarca.Name = "logoMarca";
             this.logoMarca.Size = new System.Drawing.Size(308, 162);
@@ -404,7 +452,7 @@
             this.titulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.titulo.BackColor = System.Drawing.Color.Transparent;
             this.titulo.Font = new System.Drawing.Font("Freestyle Script", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo.Location = new System.Drawing.Point(328, 46);
+            this.titulo.Location = new System.Drawing.Point(174, 46);
             this.titulo.Name = "titulo";
             this.titulo.Size = new System.Drawing.Size(920, 66);
             this.titulo.TabIndex = 18;
@@ -424,64 +472,18 @@
             this.Rentar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Rentar.ForeColor = System.Drawing.Color.White;
             this.Rentar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Rentar.Location = new System.Drawing.Point(825, 663);
+            this.Rentar.Location = new System.Drawing.Point(671, 663);
             this.Rentar.Name = "Rentar";
             this.Rentar.Size = new System.Drawing.Size(408, 58);
             this.Rentar.TabIndex = 17;
             this.Rentar.Text = "Rentar";
             this.Rentar.UseVisualStyleBackColor = false;
             // 
-            // precioDia
-            // 
-            this.precioDia.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.precioDia.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precioDia.ForeColor = System.Drawing.Color.Green;
-            this.precioDia.Location = new System.Drawing.Point(825, 544);
-            this.precioDia.Name = "precioDia";
-            this.precioDia.Size = new System.Drawing.Size(408, 38);
-            this.precioDia.TabIndex = 40;
-            this.precioDia.Text = "$ 0.00";
-            this.precioDia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(828, 515);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(154, 26);
-            this.label11.TabIndex = 39;
-            this.label11.Text = "Precio por Dia:";
-            // 
-            // PrecioHora
-            // 
-            this.PrecioHora.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.PrecioHora.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrecioHora.ForeColor = System.Drawing.Color.Green;
-            this.PrecioHora.Location = new System.Drawing.Point(825, 611);
-            this.PrecioHora.Name = "PrecioHora";
-            this.PrecioHora.Size = new System.Drawing.Size(408, 38);
-            this.PrecioHora.TabIndex = 42;
-            this.PrecioHora.Text = "$ 0.00";
-            this.PrecioHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label12.Location = new System.Drawing.Point(828, 582);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(154, 26);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "Precio por Hora:";
-            // 
             // Vehiculos_Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 788);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.panelContVehiculos);
             this.Controls.Add(this.panelVehiculos);
             this.Controls.Add(this.panelTitulo);

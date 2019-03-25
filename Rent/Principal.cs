@@ -133,6 +133,10 @@ namespace Rent
         private void Config_Click(object sender, EventArgs e)
         {
             //aqui va el formulario de ajustes
+
+            //accion temporal
+            Vehiculos_CatalogoUsuario catalogo = new Vehiculos_CatalogoUsuario();
+            catalogo.ShowDialog();
         }
 
         private void CerrarSesion_Click(object sender, EventArgs e)

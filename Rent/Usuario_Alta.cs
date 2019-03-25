@@ -46,7 +46,10 @@ namespace Rent
                     {
                         ActualizaUsuario();
                     }
+                    //Login.ActiveForm.Visible = true;
+                    //Login.ActiveForm.Focus();
                     this.Close();
+                    
                 }
                 else
                 {
