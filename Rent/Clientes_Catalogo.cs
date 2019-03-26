@@ -17,10 +17,11 @@ namespace Rent
         public Clientes_Catalogo()
         {
             InitializeComponent();
-            
 
+            panelContenedor.Show();
+            AbrirFormInPanel(new Clientes_Info());
         }
-
+        
         private void ConsultaCliente()
         {
             Variables.accion = "SELECT CLAVE FROM clientes ORDER BY CLAVE ASC ";
@@ -49,11 +50,13 @@ namespace Rent
             this.panelContenedor.Tag = fh;
             fh.Show();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             panelContenedor.Show();
             AbrirFormInPanel(new Clientes_Alta());
         }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -87,6 +90,7 @@ namespace Rent
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+
             panelContenedor.Hide();
             setVis();
             ConsultaCliente();
@@ -221,14 +225,17 @@ namespace Rent
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        public void button6_Click(object sender, EventArgs e)
         {
+
             panelContenedor.Controls.Clear();
             panelContenedor.Hide();
             panelContenedor.Show();
             AbrirFormInPanel(new Clientes_Info());
             
         }
+ 
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -370,7 +377,7 @@ namespace Rent
 
         private void telefonoresponsable_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) )
             {
                 MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
@@ -415,12 +422,13 @@ namespace Rent
 
         private void nombreresponsable_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
             {
                 MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
         }
+
     }
 }
