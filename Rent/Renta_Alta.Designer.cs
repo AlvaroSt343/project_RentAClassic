@@ -41,6 +41,8 @@
             this.Clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.precioXhora = new System.Windows.Forms.Label();
+            this.precioXdia = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.TotalDias = new System.Windows.Forms.TextBox();
@@ -66,9 +68,10 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.editar = new System.Windows.Forms.Button();
+            this.imprimir = new System.Windows.Forms.Button();
             this.GuardayConfirma = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.estatus = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.codigo = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -91,9 +94,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.marca = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.estatus = new System.Windows.Forms.Label();
-            this.precioXdia = new System.Windows.Forms.Label();
-            this.precioXhora = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -267,6 +267,34 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(432, 316);
             this.panel3.TabIndex = 8;
+            // 
+            // precioXhora
+            // 
+            this.precioXhora.BackColor = System.Drawing.Color.White;
+            this.precioXhora.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.precioXhora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.precioXhora.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precioXhora.ForeColor = System.Drawing.Color.LimeGreen;
+            this.precioXhora.Location = new System.Drawing.Point(37, 262);
+            this.precioXhora.Name = "precioXhora";
+            this.precioXhora.Size = new System.Drawing.Size(123, 26);
+            this.precioXhora.TabIndex = 31;
+            this.precioXhora.Text = "$ 0.00";
+            this.precioXhora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // precioXdia
+            // 
+            this.precioXdia.BackColor = System.Drawing.Color.White;
+            this.precioXdia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.precioXdia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.precioXdia.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precioXdia.ForeColor = System.Drawing.Color.LimeGreen;
+            this.precioXdia.Location = new System.Drawing.Point(37, 204);
+            this.precioXdia.Name = "precioXdia";
+            this.precioXdia.Size = new System.Drawing.Size(123, 26);
+            this.precioXdia.TabIndex = 30;
+            this.precioXdia.Text = "$ 0.00";
+            this.precioXdia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label24
             // 
@@ -527,7 +555,7 @@
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.editar);
+            this.panel5.Controls.Add(this.imprimir);
             this.panel5.Controls.Add(this.GuardayConfirma);
             this.panel5.Location = new System.Drawing.Point(696, 369);
             this.panel5.Name = "panel5";
@@ -551,22 +579,23 @@
             this.button2.Text = "Enviar por Correo";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // editar
+            // imprimir
             // 
-            this.editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
-            this.editar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editar.FlatAppearance.BorderSize = 0;
-            this.editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editar.ForeColor = System.Drawing.Color.White;
-            this.editar.Location = new System.Drawing.Point(284, 3);
-            this.editar.Name = "editar";
-            this.editar.Size = new System.Drawing.Size(143, 32);
-            this.editar.TabIndex = 17;
-            this.editar.Text = "Imprimir";
-            this.editar.UseVisualStyleBackColor = false;
+            this.imprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
+            this.imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imprimir.FlatAppearance.BorderSize = 0;
+            this.imprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.imprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.imprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.imprimir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imprimir.ForeColor = System.Drawing.Color.White;
+            this.imprimir.Location = new System.Drawing.Point(284, 3);
+            this.imprimir.Name = "imprimir";
+            this.imprimir.Size = new System.Drawing.Size(143, 32);
+            this.imprimir.TabIndex = 17;
+            this.imprimir.Text = "Imprimir";
+            this.imprimir.UseVisualStyleBackColor = false;
+            this.imprimir.Click += new System.EventHandler(this.imprimir_Click);
             // 
             // GuardayConfirma
             // 
@@ -617,6 +646,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(678, 308);
             this.panel2.TabIndex = 11;
+            // 
+            // estatus
+            // 
+            this.estatus.BackColor = System.Drawing.Color.White;
+            this.estatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.estatus.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.estatus.ForeColor = System.Drawing.Color.LimeGreen;
+            this.estatus.Location = new System.Drawing.Point(329, 177);
+            this.estatus.Name = "estatus";
+            this.estatus.Size = new System.Drawing.Size(129, 26);
+            this.estatus.TabIndex = 29;
+            this.estatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label25
             // 
@@ -856,46 +897,6 @@
             this.label23.Size = new System.Drawing.Size(41, 20);
             this.label23.TabIndex = 2;
             // 
-            // estatus
-            // 
-            this.estatus.BackColor = System.Drawing.Color.White;
-            this.estatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.estatus.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estatus.ForeColor = System.Drawing.Color.LimeGreen;
-            this.estatus.Location = new System.Drawing.Point(329, 177);
-            this.estatus.Name = "estatus";
-            this.estatus.Size = new System.Drawing.Size(129, 26);
-            this.estatus.TabIndex = 29;
-            this.estatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // precioXdia
-            // 
-            this.precioXdia.BackColor = System.Drawing.Color.White;
-            this.precioXdia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.precioXdia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.precioXdia.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precioXdia.ForeColor = System.Drawing.Color.LimeGreen;
-            this.precioXdia.Location = new System.Drawing.Point(37, 204);
-            this.precioXdia.Name = "precioXdia";
-            this.precioXdia.Size = new System.Drawing.Size(123, 26);
-            this.precioXdia.TabIndex = 30;
-            this.precioXdia.Text = "$ 0.00";
-            this.precioXdia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // precioXhora
-            // 
-            this.precioXhora.BackColor = System.Drawing.Color.White;
-            this.precioXhora.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.precioXhora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.precioXhora.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precioXhora.ForeColor = System.Drawing.Color.LimeGreen;
-            this.precioXhora.Location = new System.Drawing.Point(37, 262);
-            this.precioXhora.Name = "precioXhora";
-            this.precioXhora.Size = new System.Drawing.Size(123, 26);
-            this.precioXhora.TabIndex = 31;
-            this.precioXhora.Text = "$ 0.00";
-            this.precioXhora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Renta_Alta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -955,7 +956,7 @@
         public System.Windows.Forms.TextBox telefono;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button editar;
+        private System.Windows.Forms.Button imprimir;
         private System.Windows.Forms.Button GuardayConfirma;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label21;

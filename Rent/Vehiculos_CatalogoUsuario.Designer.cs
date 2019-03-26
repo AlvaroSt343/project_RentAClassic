@@ -31,9 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vehiculos_CatalogoUsuario));
             this.Listado = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Editar = new System.Windows.Forms.Button();
             this.Nuevo = new System.Windows.Forms.Button();
             this.cerrar = new System.Windows.Forms.PictureBox();
-            this.Editar = new System.Windows.Forms.Button();
+            this.imprime = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Listado)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
@@ -54,14 +55,33 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
+            this.panel4.Controls.Add(this.imprime);
             this.panel4.Controls.Add(this.Editar);
             this.panel4.Controls.Add(this.Nuevo);
             this.panel4.Controls.Add(this.cerrar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1161, 36);
+            this.panel4.Size = new System.Drawing.Size(1161, 32);
             this.panel4.TabIndex = 11;
+            // 
+            // Editar
+            // 
+            this.Editar.BackColor = System.Drawing.Color.Transparent;
+            this.Editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Editar.FlatAppearance.BorderSize = 0;
+            this.Editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.Editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Editar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Editar.ForeColor = System.Drawing.Color.White;
+            this.Editar.Location = new System.Drawing.Point(145, 0);
+            this.Editar.Name = "Editar";
+            this.Editar.Size = new System.Drawing.Size(142, 32);
+            this.Editar.TabIndex = 14;
+            this.Editar.Text = "Editar";
+            this.Editar.UseVisualStyleBackColor = false;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Nuevo
             // 
@@ -73,7 +93,7 @@
             this.Nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Nuevo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nuevo.ForeColor = System.Drawing.Color.White;
-            this.Nuevo.Location = new System.Drawing.Point(3, 1);
+            this.Nuevo.Location = new System.Drawing.Point(0, 0);
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.Size = new System.Drawing.Size(142, 32);
             this.Nuevo.TabIndex = 13;
@@ -86,7 +106,7 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(1132, 5);
+            this.cerrar.Location = new System.Drawing.Point(1133, 4);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(25, 25);
             this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,23 +114,23 @@
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
-            // Editar
+            // imprime
             // 
-            this.Editar.BackColor = System.Drawing.Color.Transparent;
-            this.Editar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Editar.FlatAppearance.BorderSize = 0;
-            this.Editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.Editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Editar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Editar.ForeColor = System.Drawing.Color.White;
-            this.Editar.Location = new System.Drawing.Point(148, 1);
-            this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(142, 32);
-            this.Editar.TabIndex = 14;
-            this.Editar.Text = "Editar";
-            this.Editar.UseVisualStyleBackColor = false;
-            this.Editar.Click += new System.EventHandler(this.Editar_Click);
+            this.imprime.BackColor = System.Drawing.Color.Transparent;
+            this.imprime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imprime.FlatAppearance.BorderSize = 0;
+            this.imprime.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.imprime.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.imprime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.imprime.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imprime.ForeColor = System.Drawing.Color.White;
+            this.imprime.Location = new System.Drawing.Point(289, 0);
+            this.imprime.Name = "imprime";
+            this.imprime.Size = new System.Drawing.Size(142, 32);
+            this.imprime.TabIndex = 15;
+            this.imprime.Text = "Imprimir";
+            this.imprime.UseVisualStyleBackColor = false;
+            this.imprime.Click += new System.EventHandler(this.imprime_Click);
             // 
             // Vehiculos_CatalogoUsuario
             // 
@@ -137,5 +157,6 @@
         private System.Windows.Forms.Button Editar;
         private System.Windows.Forms.Button Nuevo;
         private System.Windows.Forms.PictureBox cerrar;
+        private System.Windows.Forms.Button imprime;
     }
 }

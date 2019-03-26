@@ -226,5 +226,12 @@ namespace Rent
             losdias = losdias + 1;
             TotalDias.Text = (losdias).ToString();
         }
+
+        private void imprimir_Click(object sender, EventArgs e)
+        {
+            Reporte nuevoRpt = new Reporte();
+            nuevoRpt.ElReporte = 3;
+            nuevoRpt.ShowDialog();
+        }
     }
 }

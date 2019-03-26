@@ -60,6 +60,15 @@ namespace Rent
             iniciaEdicion();
         }
 
+        private void imprime_Click(object sender, EventArgs e)
+        {
+            Reporte nuevoRpt = new Reporte();
+            nuevoRpt.ElReporte = 2;
+            nuevoRpt.ShowDialog();
+        }
+
+
+
         private void iniciaEdicion()
         {
             string elCodigo = Listado.CurrentRow.Cells[0].Value.ToString();

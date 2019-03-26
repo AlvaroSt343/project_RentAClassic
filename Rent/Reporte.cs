@@ -15,6 +15,11 @@ namespace Rent
 {
     public partial class Reporte : Form
     {
+        DataSet dataSet = new DataSet();
+
+        public int ElReporte=0;
+
+
         public Reporte()
         {
             InitializeComponent();
@@ -22,20 +27,30 @@ namespace Rent
 
         private void Reporte_Load(object sender, EventArgs e)
         {
-            Variables.accion = "SELECT * FROM rentas";
+            switch (ElReporte)
+            {
+                case 1:
+                    Reportes.RptRentas RPT1 = new Reportes.RptRentas();
+                    RPT1.SetDataSource(dataSet);
+                    crystalReportViewer1.ReportSource = RPT1;
+                    crystalReportViewer1.Show();
+                    break;
+                case 2:
+                    Reportes.RptVehiculos RPT2 = new Reportes.RptVehiculos();
+                    RPT2.SetDataSource(dataSet);
+                    crystalReportViewer1.ReportSource = RPT2;
+                    crystalReportViewer1.Show();
+                    break;
+                case 3:
+                    Reportes.RptFactura RPT3 = new Reportes.RptFactura();
+                    RPT3.SetDataSource(dataSet);
+                    crystalReportViewer1.ReportSource = RPT3;
+                    crystalReportViewer1.Show();
+                    break;
 
-            MyConnection conecta = new MyConnection();
-            conecta.abrirConexion();
-            MySqlCommand Ejecuta = new MySqlCommand(Variables.accion, conecta.GetConexion());
-            MySqlDataAdapter cmc = new MySqlDataAdapter(Ejecuta);
-            Ejecuta.Connection = conecta.GetConexion();
-            //cmc.Fill(tht, "Listado");
-
-            DataSet dataSet = new DataSet();
-            Reportes.RptRentas RPT = new Reportes.RptRentas();
-            RPT.SetDataSource(dataSet);
-            crystalReportViewer1.ReportSource = RPT;
-            crystalReportViewer1.Show();          
+            }
+            
+            
         }
     }
 }

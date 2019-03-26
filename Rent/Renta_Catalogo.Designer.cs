@@ -85,7 +85,7 @@
             this.visualizar.Name = "visualizar";
             this.visualizar.Size = new System.Drawing.Size(142, 32);
             this.visualizar.TabIndex = 15;
-            this.visualizar.Text = "Visualizar";
+            this.visualizar.Text = "Imprimir";
             this.visualizar.UseVisualStyleBackColor = false;
             this.visualizar.Click += new System.EventHandler(this.visualizar_Click);
             // 

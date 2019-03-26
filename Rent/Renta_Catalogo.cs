@@ -54,6 +54,7 @@ namespace Rent
         private void visualizar_Click(object sender, EventArgs e)
         {
             Reporte nuevoRpt = new Reporte();
+            nuevoRpt.ElReporte = 1;
             nuevoRpt.ShowDialog();
         }
     }
