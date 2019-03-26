@@ -135,8 +135,6 @@ namespace Rent
             //aqui va el formulario de ajustes
 
             //accion temporal
-            Vehiculos_CatalogoUsuario catalogo = new Vehiculos_CatalogoUsuario();
-            catalogo.ShowDialog();
         }
 
         private void CerrarSesion_Click(object sender, EventArgs e)
@@ -158,19 +156,10 @@ namespace Rent
             Hora.Text = DateTime.Now.ToLongTimeString();
         }
 
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        private void CatalogoVehiculos_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void MenuVertical_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void barraTitulo_Paint(object sender, PaintEventArgs e)
-        {
-
+            Vehiculos_CatalogoUsuario catalogo = new Vehiculos_CatalogoUsuario();
+            catalogo.ShowDialog();
         }
     }
 }

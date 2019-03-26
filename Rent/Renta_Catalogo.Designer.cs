@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1059, 36);
+            this.panel1.Size = new System.Drawing.Size(1059, 32);
             this.panel1.TabIndex = 4;
             // 
             // visualizar
@@ -81,7 +81,7 @@
             this.visualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.visualizar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.visualizar.ForeColor = System.Drawing.Color.White;
-            this.visualizar.Location = new System.Drawing.Point(299, 1);
+            this.visualizar.Location = new System.Drawing.Point(291, 0);
             this.visualizar.Name = "visualizar";
             this.visualizar.Size = new System.Drawing.Size(142, 32);
             this.visualizar.TabIndex = 15;
@@ -99,7 +99,7 @@
             this.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelar.ForeColor = System.Drawing.Color.White;
-            this.cancelar.Location = new System.Drawing.Point(447, 1);
+            this.cancelar.Location = new System.Drawing.Point(435, 0);
             this.cancelar.Name = "cancelar";
             this.cancelar.Size = new System.Drawing.Size(142, 32);
             this.cancelar.TabIndex = 14;
@@ -116,7 +116,7 @@
             this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editar.ForeColor = System.Drawing.Color.White;
-            this.editar.Location = new System.Drawing.Point(151, 1);
+            this.editar.Location = new System.Drawing.Point(146, 0);
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(142, 32);
             this.editar.TabIndex = 13;
@@ -128,7 +128,7 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(1030, 5);
+            this.cerrar.Location = new System.Drawing.Point(1031, 4);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(25, 25);
             this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -146,7 +146,7 @@
             this.nuevaRenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nuevaRenta.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaRenta.ForeColor = System.Drawing.Color.White;
-            this.nuevaRenta.Location = new System.Drawing.Point(3, 1);
+            this.nuevaRenta.Location = new System.Drawing.Point(3, 0);
             this.nuevaRenta.Name = "nuevaRenta";
             this.nuevaRenta.Size = new System.Drawing.Size(142, 32);
             this.nuevaRenta.TabIndex = 11;

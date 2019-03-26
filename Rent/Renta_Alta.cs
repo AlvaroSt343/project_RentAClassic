@@ -103,8 +103,6 @@ namespace Rent
             {
                 Variables.se_guardo = "NO";
             }
-
-
         }
 
         public void ConsultaCliente(string laclave)
@@ -152,9 +150,7 @@ namespace Rent
                 precioXdia.Text = "$ " + elprecio;
                 elprecioxhora = Math.Round((this.elprecio / 24));
                 precioXhora.Text = "$ " + elprecioxhora.ToString("0.00");
-
             }
-
         }
 
         private void radioButton2_Click(object sender, EventArgs e)

@@ -22,16 +22,18 @@ namespace Rent
 
         private void Reporte_Load(object sender, EventArgs e)
         {
+            Variables.accion = "SELECT * FROM rentas";
+
             MyConnection conecta = new MyConnection();
             conecta.abrirConexion();
-            MySqlCommand buscaproductos = new MySqlCommand(Variables.accion, conecta.GetConexion());
-            MySqlDataAdapter cmc = new MySqlDataAdapter(buscaproductos);
-            DataSet tht = new DataSet();
-            buscaproductos.Connection = conecta.GetConexion();
-            cmc.Fill(tht, "Listado");
+            MySqlCommand Ejecuta = new MySqlCommand(Variables.accion, conecta.GetConexion());
+            MySqlDataAdapter cmc = new MySqlDataAdapter(Ejecuta);
+            Ejecuta.Connection = conecta.GetConexion();
+            //cmc.Fill(tht, "Listado");
 
-            Reportes.Reporte01 RPT = new Reportes.Reporte01();
-            RPT.SetDataSource(tht);
+            DataSet dataSet = new DataSet();
+            Reportes.RptRentas RPT = new Reportes.RptRentas();
+            RPT.SetDataSource(dataSet);
             crystalReportViewer1.ReportSource = RPT;
             crystalReportViewer1.Show();          
         }

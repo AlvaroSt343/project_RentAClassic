@@ -34,6 +34,7 @@ namespace Rent
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.CatalogoVehiculos = new System.Windows.Forms.Button();
             this.CerrarSesion = new System.Windows.Forms.Button();
             this.Config = new System.Windows.Forms.Button();
             this.Reportes = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@ namespace Rent
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.MenuVertical.Controls.Add(this.CatalogoVehiculos);
             this.MenuVertical.Controls.Add(this.CerrarSesion);
             this.MenuVertical.Controls.Add(this.Config);
             this.MenuVertical.Controls.Add(this.Reportes);
@@ -78,6 +80,25 @@ namespace Rent
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(53, 788);
             this.MenuVertical.TabIndex = 0;
+            // 
+            // CatalogoVehiculos
+            // 
+            this.CatalogoVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CatalogoVehiculos.FlatAppearance.BorderSize = 0;
+            this.CatalogoVehiculos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
+            this.CatalogoVehiculos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(77)))), ((int)(((byte)(116)))));
+            this.CatalogoVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CatalogoVehiculos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CatalogoVehiculos.ForeColor = System.Drawing.Color.White;
+            this.CatalogoVehiculos.Image = ((System.Drawing.Image)(resources.GetObject("CatalogoVehiculos.Image")));
+            this.CatalogoVehiculos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CatalogoVehiculos.Location = new System.Drawing.Point(3, 227);
+            this.CatalogoVehiculos.Name = "CatalogoVehiculos";
+            this.CatalogoVehiculos.Size = new System.Drawing.Size(250, 45);
+            this.CatalogoVehiculos.TabIndex = 9;
+            this.CatalogoVehiculos.Text = "Catalogo";
+            this.CatalogoVehiculos.UseVisualStyleBackColor = true;
+            this.CatalogoVehiculos.Click += new System.EventHandler(this.CatalogoVehiculos_Click);
             // 
             // CerrarSesion
             // 
@@ -166,7 +187,7 @@ namespace Rent
             this.Clientes.ForeColor = System.Drawing.Color.White;
             this.Clientes.Image = ((System.Drawing.Image)(resources.GetObject("Clientes.Image")));
             this.Clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Clientes.Location = new System.Drawing.Point(3, 374);
+            this.Clientes.Location = new System.Drawing.Point(3, 378);
             this.Clientes.Name = "Clientes";
             this.Clientes.Size = new System.Drawing.Size(250, 45);
             this.Clientes.TabIndex = 4;
@@ -185,7 +206,7 @@ namespace Rent
             this.Rentas.ForeColor = System.Drawing.Color.White;
             this.Rentas.Image = ((System.Drawing.Image)(resources.GetObject("Rentas.Image")));
             this.Rentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Rentas.Location = new System.Drawing.Point(3, 293);
+            this.Rentas.Location = new System.Drawing.Point(3, 301);
             this.Rentas.Name = "Rentas";
             this.Rentas.Size = new System.Drawing.Size(250, 45);
             this.Rentas.TabIndex = 3;
@@ -204,7 +225,7 @@ namespace Rent
             this.Vehiculos.ForeColor = System.Drawing.Color.White;
             this.Vehiculos.Image = ((System.Drawing.Image)(resources.GetObject("Vehiculos.Image")));
             this.Vehiculos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Vehiculos.Location = new System.Drawing.Point(3, 223);
+            this.Vehiculos.Location = new System.Drawing.Point(3, 162);
             this.Vehiculos.Name = "Vehiculos";
             this.Vehiculos.Size = new System.Drawing.Size(250, 45);
             this.Vehiculos.TabIndex = 2;
@@ -321,7 +342,7 @@ namespace Rent
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1247, 750);
             this.panelContenedor.TabIndex = 2;
-            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
+            //this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // timer1
             // 
@@ -376,6 +397,7 @@ namespace Rent
         private System.Windows.Forms.Button Usuarios;
         private System.Windows.Forms.Timer timer1;
         private Label Hora;
+        private Button CatalogoVehiculos;
     }
 }
 
