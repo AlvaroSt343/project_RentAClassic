@@ -73,6 +73,12 @@
     <Compile Include="Clases\UserDAO.cs" />
     <Compile Include="Clases\Variables.cs" />
     <Compile Include="Clases\UserModel.cs" />
+    <Compile Include="Clientes_Informacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Informacion.Designer.cs">
+      <DependentUpon>Clientes_Informacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes_Alta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,12 +90,6 @@
     </Compile>
     <Compile Include="Clientes_Catalogo.Designer.cs">
       <DependentUpon>Clientes_Catalogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Clientes_Info.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Clientes_Info.Designer.cs">
-      <DependentUpon>Clientes_Info.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -183,14 +183,14 @@
     <EmbeddedResource Include="Busca_Vehiculos.resx">
       <DependentUpon>Busca_Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Clientes_Informacion.resx">
+      <DependentUpon>Clientes_Informacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes_Alta.resx">
       <DependentUpon>Clientes_Alta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes_Catalogo.resx">
       <DependentUpon>Clientes_Catalogo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Clientes_Info.resx">
-      <DependentUpon>Clientes_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
