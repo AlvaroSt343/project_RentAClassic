@@ -36,7 +36,7 @@ namespace Rent.Clases
 
         public string ConsultaFolio(string laTabla)
         {
-            string x = "";
+            string elDato = "";
             Variables.accion = "SELECT folio FROM " + laTabla;
             MyConnection nuevaConexion = new MyConnection();
             nuevaConexion.abrirConexion();
@@ -44,9 +44,23 @@ namespace Rent.Clases
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                x = reader[0].ToString();
+                elDato = reader[0].ToString();
             }
-            return x;
+            return elDato;
+        }
+
+        public string ConsultaUnDato()
+        {
+            string elDato = "";
+            MyConnection nuevaConexion = new MyConnection();
+            nuevaConexion.abrirConexion();
+            MySqlCommand cmd = new MySqlCommand(Variables.accion, nuevaConexion.GetConexion());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                elDato = reader[0].ToString();
+            }
+            return elDato;
         }
 
     }

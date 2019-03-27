@@ -230,6 +230,28 @@ namespace Rent
         private void imprimir_Click(object sender, EventArgs e)
         {
             Reporte nuevoRpt = new Reporte();
+
+            nuevoRpt.clienteClave = Clave.Text;
+            nuevoRpt.cliente = cliente.Text;
+            nuevoRpt.telefono = telefono.Text;
+            nuevoRpt.correo = correo.Text;
+
+            nuevoRpt.codigo = codigo.Text;
+            nuevoRpt.marca = marca.Text;
+            nuevoRpt.modelo = modelo.Text;
+            nuevoRpt.color = color.Text;
+            nuevoRpt.fabricacion = fabricacion.Text;
+            nuevoRpt.subtotal = subtotal.Text;
+            nuevoRpt.iva = impuestos.Text;
+            nuevoRpt.total = total.Text;
+
+            nuevoRpt.desde = entrega.Value.ToString("dd-MM-yyyy");
+            nuevoRpt.hasta = devolucion.Value.ToString("dd-MM-yyyy");
+            nuevoRpt.totaldias = TotalDias.Text;
+            nuevoRpt.totalhoras = TotalHoras.Text;
+            nuevoRpt.precioxdia = precioXdia.Text;
+            nuevoRpt.precioxhora = precioXhora.Text;
+
             nuevoRpt.ElReporte = 3;
             nuevoRpt.ShowDialog();
         }
