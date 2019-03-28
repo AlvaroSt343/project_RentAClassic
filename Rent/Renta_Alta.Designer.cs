@@ -37,7 +37,6 @@
             this.correo = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Clientes = new System.Windows.Forms.Button();
             this.Clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -74,8 +73,7 @@
             this.estatus = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.codigo = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Foto1 = new System.Windows.Forms.PictureBox();
             this.transmision = new System.Windows.Forms.ComboBox();
             this.tipo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -94,6 +92,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.marca = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -101,7 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Foto1)).BeginInit();
             this.SuspendLayout();
             // 
             // cliente
@@ -129,12 +129,12 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.telefono);
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.correo);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.Clientes);
             this.panel1.Controls.Add(this.Clave);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cliente);
@@ -197,24 +197,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
-            // 
-            // Clientes
-            // 
-            this.Clientes.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Clientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Clientes.FlatAppearance.BorderSize = 0;
-            this.Clientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
-            this.Clientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(77)))), ((int)(((byte)(116)))));
-            this.Clientes.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Clientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Clientes.ForeColor = System.Drawing.Color.White;
-            this.Clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Clientes.Location = new System.Drawing.Point(550, 31);
-            this.Clientes.Name = "Clientes";
-            this.Clientes.Size = new System.Drawing.Size(27, 27);
-            this.Clientes.TabIndex = 5;
-            this.Clientes.UseVisualStyleBackColor = false;
-            this.Clientes.Click += new System.EventHandler(this.Clientes_Click);
             // 
             // Clave
             // 
@@ -337,7 +319,7 @@
             this.CalcularTotales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CalcularTotales.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalcularTotales.ForeColor = System.Drawing.Color.White;
-            this.CalcularTotales.Location = new System.Drawing.Point(305, 117);
+            this.CalcularTotales.Location = new System.Drawing.Point(305, 115);
             this.CalcularTotales.Name = "CalcularTotales";
             this.CalcularTotales.Size = new System.Drawing.Size(88, 22);
             this.CalcularTotales.TabIndex = 19;
@@ -627,11 +609,11 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.estatus);
             this.panel2.Controls.Add(this.label25);
             this.panel2.Controls.Add(this.codigo);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.Foto1);
             this.panel2.Controls.Add(this.transmision);
             this.panel2.Controls.Add(this.tipo);
             this.panel2.Controls.Add(this.label5);
@@ -688,31 +670,14 @@
             this.codigo.TabIndex = 3;
             this.codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox1
+            // Foto1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(475, 111);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 159);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(115)))), ((int)(((byte)(159)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(77)))), ((int)(((byte)(116)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(231, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 27);
-            this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Foto1.Location = new System.Drawing.Point(475, 111);
+            this.Foto1.Name = "Foto1";
+            this.Foto1.Size = new System.Drawing.Size(188, 159);
+            this.Foto1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Foto1.TabIndex = 27;
+            this.Foto1.TabStop = false;
             // 
             // transmision
             // 
@@ -905,6 +870,34 @@
             this.label23.Size = new System.Drawing.Size(41, 20);
             this.label23.TabIndex = 2;
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkTurquoise;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
+            this.button2.Location = new System.Drawing.Point(548, 30);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 27);
+            this.button2.TabIndex = 30;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Clientes_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkTurquoise;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
+            this.button3.Location = new System.Drawing.Point(231, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(27, 27);
+            this.button3.TabIndex = 31;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Renta_Alta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -929,7 +922,7 @@
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Foto1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -938,7 +931,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Clientes;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox subtotal;
@@ -980,8 +972,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Foto1;
         public System.Windows.Forms.ComboBox transmision;
         public System.Windows.Forms.ComboBox tipo;
         public System.Windows.Forms.TextBox descripcion;
@@ -1000,5 +991,7 @@
         private System.Windows.Forms.Label estatus;
         private System.Windows.Forms.Label precioXhora;
         private System.Windows.Forms.Label precioXdia;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

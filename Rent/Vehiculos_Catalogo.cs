@@ -161,10 +161,19 @@ namespace Rent
             titulo.Text = ax.Text;
             ValidaEstatus();
             panelContVehiculos.Visible = true;
-            string Ruta1= "C:\\Users\\Alvaro\\Documents\\RENTACLASSIC\\RENT PROJECT\\vehiculos\\marcas\\" + marca.Text + ".png";
-            string Ruta2 = "C:\\Users\\Alvaro\\Documents\\RENTACLASSIC\\RENT PROJECT\\vehiculos\\coches\\" + ax.Tag.ToString() + ".jpg";
-            logoMarca.ImageLocation = Ruta1;
-            Fotos.ImageLocation = Ruta2;
+
+            if (elCodigoV != "")
+            {
+                try
+                {
+                    logoMarca.Image = Image.FromFile("C:\\RentDocs\\Logos\\" + marca.Text + ".png");
+                    Fotos.Image = Image.FromFile("C:\\RentDocs\\Autos\\" + ax.Tag.ToString() + ".jpg");
+                }
+                catch
+                {
+                }
+            }   
+
         }
 
         private void ConsultaVehiculo()

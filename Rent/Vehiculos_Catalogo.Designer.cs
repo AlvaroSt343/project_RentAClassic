@@ -37,6 +37,7 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.botonMenu = new System.Windows.Forms.PictureBox();
             this.panelVehiculos = new System.Windows.Forms.Panel();
+            this.labelSeleccione = new System.Windows.Forms.Label();
             this.panelContVehiculos = new System.Windows.Forms.Panel();
             this.PrecioHora = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.logoMarca = new System.Windows.Forms.PictureBox();
             this.titulo = new System.Windows.Forms.Label();
             this.Rentar = new System.Windows.Forms.Button();
-            this.labelSeleccione = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).BeginInit();
@@ -183,6 +183,19 @@
             this.panelVehiculos.Name = "panelVehiculos";
             this.panelVehiculos.Size = new System.Drawing.Size(280, 755);
             this.panelVehiculos.TabIndex = 3;
+            // 
+            // labelSeleccione
+            // 
+            this.labelSeleccione.BackColor = System.Drawing.Color.Transparent;
+            this.labelSeleccione.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeleccione.ForeColor = System.Drawing.Color.White;
+            this.labelSeleccione.Location = new System.Drawing.Point(23, 13);
+            this.labelSeleccione.Name = "labelSeleccione";
+            this.labelSeleccione.Size = new System.Drawing.Size(238, 26);
+            this.labelSeleccione.TabIndex = 0;
+            this.labelSeleccione.Text = "Seleccione un tipo";
+            this.labelSeleccione.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSeleccione.Visible = false;
             // 
             // panelContVehiculos
             // 
@@ -442,7 +455,7 @@
             // 
             // logoMarca
             // 
-            this.logoMarca.ErrorImage = ((System.Drawing.Image)(resources.GetObject("logoMarca.ErrorImage")));
+            this.logoMarca.ErrorImage = null;
             this.logoMarca.Location = new System.Drawing.Point(6, 8);
             this.logoMarca.Name = "logoMarca";
             this.logoMarca.Size = new System.Drawing.Size(308, 162);
@@ -482,19 +495,6 @@
             this.Rentar.Text = "Rentar";
             this.Rentar.UseVisualStyleBackColor = false;
             this.Rentar.Click += new System.EventHandler(this.Rentar_Click);
-            // 
-            // labelSeleccione
-            // 
-            this.labelSeleccione.BackColor = System.Drawing.Color.Transparent;
-            this.labelSeleccione.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSeleccione.ForeColor = System.Drawing.Color.White;
-            this.labelSeleccione.Location = new System.Drawing.Point(23, 13);
-            this.labelSeleccione.Name = "labelSeleccione";
-            this.labelSeleccione.Size = new System.Drawing.Size(238, 26);
-            this.labelSeleccione.TabIndex = 0;
-            this.labelSeleccione.Text = "Seleccione un tipo";
-            this.labelSeleccione.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelSeleccione.Visible = false;
             // 
             // Vehiculos_Catalogo
             // 

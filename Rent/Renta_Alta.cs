@@ -55,6 +55,15 @@ namespace Rent
             Busca_Vehiculos busca = new Busca_Vehiculos();
             busca.inter = this;
             busca.ShowDialog();
+            if (codigo.Text != "")
+            {
+                try
+                {
+                    Foto1.Image = Image.FromFile("C:\\RentDocs\\Autos\\" + codigo.Text + ".jpg");
+                }
+                catch
+                { }
+            }
         }
 
         private void Clientes_Click(object sender, EventArgs e)
