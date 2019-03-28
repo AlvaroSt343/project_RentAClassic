@@ -14,7 +14,9 @@ namespace Rent
 {
     public partial class Clientes_Catalogo : Form
     {
-        
+        Clientes_Alta clientesalta = new Clientes_Alta();
+
+
         public Clientes_Catalogo()
         {
             InitializeComponent();
@@ -49,6 +51,34 @@ namespace Rent
         private void cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Nuevo_Click(object sender, EventArgs e)
+        {
+            clientesalta.ShowDialog();
+        }
+
+        private void editar_Click(object sender, EventArgs e)
+        {
+            clientesalta.clave.Text= Listado.CurrentRow.Cells[0].Value.ToString();
+            clientesalta.nombre.Text = Listado.CurrentRow.Cells[1].Value.ToString();
+            clientesalta.apellido1.Text = Listado.CurrentRow.Cells[2].Value.ToString();
+            clientesalta.apellido2.Text = Listado.CurrentRow.Cells[3].Value.ToString();
+            clientesalta.telefono1.Text = Listado.CurrentRow.Cells[4].Value.ToString();
+            clientesalta.correo.Text = Listado.CurrentRow.Cells[5].Value.ToString();
+            clientesalta.domicilio.Text = Listado.CurrentRow.Cells[6].Value.ToString();
+            clientesalta.cuenta.Text = Listado.CurrentRow.Cells[7].Value.ToString();
+            clientesalta.nombre2.Text = Listado.CurrentRow.Cells[8].Value.ToString();
+            clientesalta.telefono2.Text = Listado.CurrentRow.Cells[9].Value.ToString();
+            clientesalta.esEdicion = "SI";
+            clientesalta.ShowDialog();
+        }
+
+        private void imprimir_Click(object sender, EventArgs e)
+        {
+            Reporte nuevoRpt = new Reporte();
+            nuevoRpt.ElReporte = 4;
+            nuevoRpt.ShowDialog();
         }
     }
 }

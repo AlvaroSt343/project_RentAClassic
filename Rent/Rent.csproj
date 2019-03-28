@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApartadoPregunta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApartadoPregunta.Designer.cs">
+      <DependentUpon>ApartadoPregunta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busca_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,28 +74,41 @@
     </Compile>
     <Compile Include="Clases\ConnectionSQL.cs" />
     <Compile Include="Clases\Consultas.cs" />
+    <Compile Include="Clases\EnviarCorreo.cs" />
     <Compile Include="Clases\Interface1.cs" />
     <Compile Include="Clases\MyConnection.cs" />
     <Compile Include="Clases\UserDAO.cs" />
     <Compile Include="Clases\Variables.cs" />
     <Compile Include="Clases\UserModel.cs" />
-    <Compile Include="Clientes_Informacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Clientes_Informacion.Designer.cs">
-      <DependentUpon>Clientes_Informacion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Clientes_Alta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clientes_Alta.Designer.cs">
       <DependentUpon>Clientes_Alta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clientes_Informacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Informacion.Designer.cs">
+      <DependentUpon>Clientes_Informacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes_Catalogo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clientes_Catalogo.Designer.cs">
       <DependentUpon>Clientes_Catalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devoluciones.Designer.cs">
+      <DependentUpon>Devoluciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -123,6 +142,12 @@
     <Compile Include="Reporte.Designer.cs">
       <DependentUpon>Reporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\RptClientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\RptFactura.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +165,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RptVehiculos.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes_General.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_General.Designer.cs">
+      <DependentUpon>Reportes_General.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario_Alta.cs">
       <SubType>Form</SubType>
@@ -177,17 +208,20 @@
     <Compile Include="Vehiculos_Recepcion.Designer.cs">
       <DependentUpon>Vehiculos_Recepcion.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApartadoPregunta.resx">
+      <DependentUpon>ApartadoPregunta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busca_Cliente.resx">
       <DependentUpon>Busca_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busca_Vehiculos.resx">
       <DependentUpon>Busca_Vehiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes_Informacion.resx">
-      <DependentUpon>Clientes_Informacion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Clientes_Alta.resx">
       <DependentUpon>Clientes_Alta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes_Informacion.resx">
+      <DependentUpon>Clientes_Informacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes_Catalogo.resx">
       <DependentUpon>Clientes_Catalogo.cs</DependentUpon>
@@ -216,6 +250,10 @@
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptClientes.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptFactura.cs</LastGenOutput>
@@ -227,6 +265,9 @@
     <EmbeddedResource Include="Reportes\RptVehiculos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptVehiculos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_General.resx">
+      <DependentUpon>Reportes_General.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario_Alta.resx">
       <DependentUpon>Usuario_Alta.cs</DependentUpon>

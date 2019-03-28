@@ -52,6 +52,7 @@ namespace Rent
             this.Hora = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.fecha = new System.Windows.Forms.Label();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
@@ -257,6 +258,7 @@ namespace Rent
             // barraTitulo
             // 
             this.barraTitulo.BackColor = System.Drawing.Color.SteelBlue;
+            this.barraTitulo.Controls.Add(this.fecha);
             this.barraTitulo.Controls.Add(this.minimizar);
             this.barraTitulo.Controls.Add(this.maximizar);
             this.barraTitulo.Controls.Add(this.cerrar);
@@ -322,11 +324,10 @@ namespace Rent
             // 
             // Hora
             // 
-            this.Hora.Dock = System.Windows.Forms.DockStyle.Top;
             this.Hora.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hora.Location = new System.Drawing.Point(0, 0);
+            this.Hora.Location = new System.Drawing.Point(276, 2);
             this.Hora.Name = "Hora";
-            this.Hora.Size = new System.Drawing.Size(1247, 30);
+            this.Hora.Size = new System.Drawing.Size(195, 30);
             this.Hora.TabIndex = 4;
             this.Hora.Text = "00:00:00";
             this.Hora.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -342,11 +343,20 @@ namespace Rent
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1247, 750);
             this.panelContenedor.TabIndex = 2;
-            //this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // fecha
+            // 
+            this.fecha.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha.Location = new System.Drawing.Point(477, 2);
+            this.fecha.Name = "fecha";
+            this.fecha.Size = new System.Drawing.Size(520, 30);
+            this.fecha.TabIndex = 5;
+            this.fecha.Text = "00/00/0000";
+            this.fecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Principal
             // 
@@ -398,6 +408,7 @@ namespace Rent
         private System.Windows.Forms.Timer timer1;
         private Label Hora;
         private Button CatalogoVehiculos;
+        private Label fecha;
     }
 }
 

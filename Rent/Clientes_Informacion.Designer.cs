@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes_Informacion));
-            this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,22 +56,17 @@
             this.rentas = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cerrar = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.verinfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Folio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(320, 33);
-            this.label11.TabIndex = 52;
-            this.label11.Text = "Informacion del Cliente";
             // 
             // label1
             // 
@@ -177,7 +171,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cliente);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 84);
+            this.panel1.Location = new System.Drawing.Point(18, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(284, 431);
             this.panel1.TabIndex = 67;
@@ -269,7 +263,7 @@
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.rentas);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(319, 84);
+            this.panel3.Location = new System.Drawing.Point(319, 70);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(900, 431);
             this.panel3.TabIndex = 78;
@@ -367,18 +361,51 @@
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
-            // Clientes_Alta
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1231, 32);
+            this.panel2.TabIndex = 84;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1203, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, -1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(320, 33);
+            this.label11.TabIndex = 53;
+            this.label11.Text = "Informacion del Cliente";
+            // 
+            // Clientes_Informacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1231, 610);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.cerrar);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label11);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(55, 90);
-            this.Name = "Clientes_Alta";
+            this.Name = "Clientes_Informacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Tag = "";
             this.Load += new System.EventHandler(this.Clientes_Alta_Load);
@@ -389,14 +416,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.verinfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Folio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox cliente;
         private System.Windows.Forms.Label label2;
@@ -422,5 +449,8 @@
         private System.Windows.Forms.TextBox rentas;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox cerrar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

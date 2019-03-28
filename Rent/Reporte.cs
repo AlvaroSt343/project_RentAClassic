@@ -1,4 +1,5 @@
-﻿using CrystalDecisions.Windows.Forms;
+﻿using CrystalDecisions.Shared;
+using CrystalDecisions.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Rent.Clases;
 using System;
@@ -103,6 +104,15 @@ namespace Rent
                     RPT3.SetParameterValue("precioxhora", precioxhora);
 
                     crystalReportViewer1.ReportSource = RPT3;
+
+                    RPT3.ExportToDisk(ExportFormatType.PortableDocFormat, "C:\\RentDocs\\Renta_"+ elFolio + ".pdf");
+
+                    crystalReportViewer1.Show();
+                    break;
+                case 4:
+                    Reportes.RptClientes RPT4 = new Reportes.RptClientes();
+                    RPT4.SetDataSource(dataSet);
+                    crystalReportViewer1.ReportSource = RPT4;
                     crystalReportViewer1.Show();
                     break;
             }  

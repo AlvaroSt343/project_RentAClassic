@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using MySql.Data.MySqlClient;
 using Rent.Clases;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,7 @@ namespace Rent
         double impuesto;
         double eltotal;
         string Folio;
+        string guardar;
 
         public static int codigoAuto { get; set; }
 
@@ -63,28 +66,51 @@ namespace Rent
 
         private void GuardayConfirma_Click(object sender, EventArgs e)
         {
-            Variables.accion = "INSERT INTO rentas (Fecha, Hora, Cantidad, Subtotal, IVA, Total, UsuarioClave, UsuarioNombre, ClienteClave, ClienteNombre," +
-                "Estatus) Values ('"+ DateTime.Now.ToString("dd/MM/yyyy") +"','"+ DateTime.Now.ToString("HH:MM:ss") +"','1','"+ sub +"','"+ impuesto +"'," +
-                " '"+ eltotal +"','"+ Variables.USER +"','"+ Variables.NOMBRE +"','"+ Clave.Text +"','"+ cliente.Text +"','ACTIVO')";
-            MessageBox.Show(Variables.accion);
-            GuardaRenta();
-            if (Variables.se_guardo == "SI")
+            if (estatus.Text == "DISPONIBLE" || estatus.Text == "APARTADO")
             {
-                Folio = consulta.ConsultaFolio("rentas");
-                Variables.accion = "INSERT INTO rentas_detalle (Folio1, Codigo, Marca, Modelo, Cantidad, Subtotal, IVA, Total,DiaEntrega, DiaDevolucion, Dias, Horas, Bandera) Values ('" + Folio + "'," +
-                    "'" + codigo.Text + "','" + marca.Text + "','" + modelo.Text + "','1','" + sub + "','" + impuesto + "','" + eltotal + "','"+ entrega.Value.ToString("yyyyMMdd") +"'," +
-                    "'"+ devolucion.Value.ToString("yyyyMMdd") +"','"+ TotalDias +"','"+ TotalHoras +"','AGREGADO')";
-                MessageBox.Show(Variables.accion);
-                GuardaRenta();
-                if (Variables.se_guardo == "SI")
+                guardar = Validar();
+                if (guardar == "SI")
                 {
-                    MessageBox.Show("Renta guardada exitosamente", "Insercion Exitosa!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //aqui guarda el encabezado
+                    Variables.accion = "INSERT INTO rentas (Fecha, Hora, Cantidad, Subtotal, IVA, Total, UsuarioClave, UsuarioNombre, ClienteClave, ClienteNombre," +
+                    "Estatus) Values ('" + DateTime.Now.ToString("dd/MM/yyyy") + "','" + DateTime.Now.ToString("HH:MM:ss") + "','1','" + sub + "','" + impuesto + "'," +
+                    " '" + eltotal + "','" + Variables.USER + "','" + Variables.NOMBRE + "','" + Clave.Text + "','" + cliente.Text + "','ACTIVO')";
+                    GuardaRenta();
+                    if (Variables.se_guardo == "SI")
+                    {
+                        //aquyi guarda el detalle
+                        Folio = consulta.ConsultaFolio("rentas");
+                        Variables.accion = "INSERT INTO rentas_detalle (Folio1, Codigo, Marca, Modelo, Cantidad, Subtotal, IVA, Total,DiaEntrega, DiaDevolucion, Dias, Horas, Bandera) Values ('" + Folio + "'," +
+                            "'" + codigo.Text + "','" + marca.Text + "','" + modelo.Text + "','1','" + sub + "','" + impuesto + "','" + eltotal + "','" + entrega.Value.ToString("yyyyMMdd") + "'," +
+                            "'" + devolucion.Value.ToString("yyyyMMdd") + "','" + TotalDias + "','" + TotalHoras + "','AGREGADO')";
+                        GuardaRenta();
+                        if (Variables.se_guardo == "SI")
+                        {
+                            ActualizaAuto();
+                            if (Variables.se_guardo == "SI")
+                            {
+                                MessageBox.Show("Renta guardada exitosamente, ¡no olvide imprimir su contrato!", "¡Genial!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Surgio un error al actualizar, por favor verifique", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        { MessageBox.Show("Surgio un error al guardar el detalle, por favor verifique", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                    }
+                    else
+                    { MessageBox.Show("Surgio un error al guardar, por favor verifique", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
                 else
-                { MessageBox.Show("Surgio un error al guardar el detalle, por favor verifique", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                {
+                    MessageBox.Show("Debe completar correctamente los datos solicitados", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
-            { MessageBox.Show("Surgio un error al guardar, por favor verifique", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            {
+                MessageBox.Show("El vehiculo seleccionado no esta disponible", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void GuardaRenta()
@@ -254,6 +280,93 @@ namespace Rent
 
             nuevoRpt.ElReporte = 3;
             nuevoRpt.ShowDialog();
+            this.Envia.Enabled = true;
+        }
+
+        public void Envia_Click(object sender, EventArgs e)
+        {
+            EnviarCorreo enviar = new EnviarCorreo();
+            enviar.ElFolio = this.Folio;
+            enviar.Elcliente = this.cliente.Text;
+            enviar.ElAuto = marca.Text +" "+ modelo.Text +" "+ fabricacion.Text;
+            enviar.destinatario = correo.Text;
+            enviar.Correo();
+            if (Variables.se_guardo == "SI")
+            {
+                MessageBox.Show("Correo enviado exitosamente", "¡Genial!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("el correo no se puedo enviar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ActualizaAuto()
+        {
+            try
+            {
+                Variables.accion = "UPDATE vehiculos SET estatus=@C1 WHERE codigo='" + codigo.Text + "'";
+                MyConnection conecta = new MyConnection();
+                conecta.abrirConexion();
+                MySqlCommand ejecuta = new MySqlCommand(Variables.accion);
+                ejecuta.Connection = conecta.GetConexion();
+                ejecuta.Parameters.AddWithValue("@C1", ("APARTADO"));
+                conecta.GetConexion();
+                ejecuta.ExecuteNonQuery();
+                conecta.cerrarConexion();
+                Variables.se_guardo = "SI";
+            }
+            catch
+            {
+                Variables.se_guardo = "NO";
+            }
+        }
+
+        public string Validar()
+        {
+            if (Clave.Text=="" || codigo.Text=="")
+            {
+                return "NO";
+            }
+            else
+            {
+                if (radioButton1.Checked == true)
+                {
+                    if (TotalDias.Text == "0")
+                    {
+                        return "NO";
+                    }
+                    else
+                    {
+                        if (total.Text=="0.00")
+                        {
+                            return "NO";
+                        }
+                        else
+                        {
+                            return "SI";
+                        }
+                    }
+                }
+                else
+                {
+                    if (TotalHoras.Text == "0")
+                    {
+                        return "NO";
+                    }
+                    else
+                    {
+                        if (total.Text == "0.00")
+                        {
+                            return "NO";
+                        }
+                        else
+                        {
+                            return "SI";
+                        }
+                    }
+                }
+            }
         }
     }
 }

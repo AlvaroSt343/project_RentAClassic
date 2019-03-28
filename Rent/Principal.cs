@@ -105,36 +105,54 @@ namespace Rent
         //BOTONES DE MENU
         private void Vehiculos_Click(object sender, EventArgs e)
         {
-            //AbrirFormInPanel(new Vehiculos_Catalogo());
+            MenuVertical.Width = 53;
+            logo1.Visible = false;
+            logo2.Visible = true;
+
             Vehiculos_Catalogo Catalogo = new Vehiculos_Catalogo();
+            Catalogo.labelSeleccione.Visible = true;
             Catalogo.Show();
         }
 
         private void Rentas_Click(object sender, EventArgs e)
         {
+            MenuVertical.Width = 53;
+            logo1.Visible = false;
+            logo2.Visible = true;
             AbrirFormInPanel(new Renta_Catalogo());
         }
 
         private void Clientes_Click(object sender, EventArgs e)
         {
+            MenuVertical.Width = 53;
+            logo1.Visible = false;
+            logo2.Visible = true;
             AbrirFormInPanel(new Clientes_Catalogo());
         }
 
         private void Usuarios_Click(object sender, EventArgs e)
         {
+            MenuVertical.Width = 53;
+            logo1.Visible = false;
+            logo2.Visible = true;
             AbrirFormInPanel(new Usuario_Catalogo());
         }
 
         private void Reportes_Click(object sender, EventArgs e)
         {
-            //aqui va el formulario de reportes
+            MenuVertical.Width = 53;
+            logo1.Visible = false;
+            logo2.Visible = true;
+            AbrirFormInPanel(new Reportes_General());
         }
 
         private void Config_Click(object sender, EventArgs e)
         {
-            //aqui va el formulario de ajustes
-
-            //accion temporal
+            MenuVertical.Width = 53;
+            logo1.Visible = false;
+            logo2.Visible = true;
+            Configuracion Config = new Configuracion();
+            Config.ShowDialog();
         }
 
         private void CerrarSesion_Click(object sender, EventArgs e)
@@ -148,16 +166,21 @@ namespace Rent
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             Hora.Text = DateTime.Now.ToLongTimeString();
+            fecha.Text = DateTime.Now.ToLongDateString();
         }
 
         private void CatalogoVehiculos_Click(object sender, EventArgs e)
         {
+            MenuVertical.Width = 53;
+            logo1.Visible = false;
+            logo2.Visible = true;
+
             Vehiculos_CatalogoUsuario catalogo = new Vehiculos_CatalogoUsuario();
             catalogo.ShowDialog();
         }

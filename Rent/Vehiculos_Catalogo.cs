@@ -17,7 +17,9 @@ namespace Rent
         //atributos publicos locales
         Button []arrbutton;
         public int x = 0;
+        public string elCodigoV;
         public List<datos> lista = new List<datos>();
+        ApartadoPregunta aparta = new ApartadoPregunta();
 
         public Vehiculos_Catalogo()
         {
@@ -61,32 +63,36 @@ namespace Rent
 
         private void Classic_Click(object sender, EventArgs e)
         {
+            labelSeleccione.Visible = false;
             panelVehiculos.Controls.Clear();
-            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Classic' AND estatus='DISPONIBLE'";
+            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Classic'";
             LlenaLista();
             CreaBotones();
         }
 
         private void Muscle_Click(object sender, EventArgs e)
         {
+            labelSeleccione.Visible = false;
             panelVehiculos.Controls.Clear();
-            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Muscle' AND estatus='DISPONIBLE'";
+            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Muscle'";
             LlenaLista();
             CreaBotones();
         }
 
         private void PickUp_Click(object sender, EventArgs e)
         {
+            labelSeleccione.Visible = false;
             panelVehiculos.Controls.Clear();
-            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'PickUp' AND estatus='DISPONIBLE'";
+            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'PickUp'";
             LlenaLista();
             CreaBotones();
         }
 
         private void Motorcycle_Click(object sender, EventArgs e)
         {
+            labelSeleccione.Visible = false;
             panelVehiculos.Controls.Clear();
-            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Motorcycle' AND estatus='DISPONIBLE'";
+            Variables.accion = "SELECT Codigo, Marca, Modelo, Fabricacion FROM vehiculos WHERE Tipo = 'Motorcycle'";
             LlenaLista();
             CreaBotones();
         }
@@ -136,7 +142,20 @@ namespace Rent
 
         private void SelectAuto(object sender, EventArgs e)
         {
+            
+            panelVehiculos.Width = 0;
+            Classic.Width = 0;
+            Classic.Location = new System.Drawing.Point(0, 0);
+            Muscle.Width = 0;
+            Muscle.Location = new System.Drawing.Point(0, 0);
+            PickUp.Width = 0;
+            PickUp.Location = new System.Drawing.Point(0, 0);
+            Motorcycle.Width = 0;
+            Motorcycle.Location = new System.Drawing.Point(0, 0);
+            botonMenu.Location = new System.Drawing.Point(0, 0);
+
             Button ax = (Button)sender;
+            this.elCodigoV = ax.Tag.ToString();
             Variables.accion = "SELECT * FROM vehiculos WHERE codigo='"+ ax.Tag.ToString() + "'";
             ConsultaVehiculo();
             titulo.Text = ax.Text;
@@ -182,13 +201,35 @@ namespace Rent
             }
             else
             {
-                estatus.ForeColor = Color.Red;
+                if (estatus.Text == "APARTADO")
+                {
+                    estatus.ForeColor = Color.Orange;
+                }
+                else
+                {
+                    estatus.ForeColor = Color.Red;
+                }
             }
         }
 
         private void Vehiculos_Catalogo_Load(object sender, EventArgs e)
         {
             panelContVehiculos.Visible = false;
+        }
+
+        private void Rentar_Click(object sender, EventArgs e)
+        {
+            if (estatus.Text == "DISPONIBLE")
+            {
+                aparta.elcodigo = this.elCodigoV;
+                aparta.titulo.Text = "¿DESEA APARTAR ESTE VEHICULO?";
+                aparta.panelDesea.Visible = true;
+                aparta.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Este vehiculo no esta disponible por el momento","Aviso..",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }   
         }
     }
 

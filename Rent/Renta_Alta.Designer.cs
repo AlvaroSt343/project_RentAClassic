@@ -67,7 +67,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Envia = new System.Windows.Forms.Button();
             this.imprimir = new System.Windows.Forms.Button();
             this.GuardayConfirma = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -208,6 +208,7 @@
             this.Clientes.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Clientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clientes.ForeColor = System.Drawing.Color.White;
+            this.Clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Clientes.Location = new System.Drawing.Point(550, 31);
             this.Clientes.Name = "Clientes";
             this.Clientes.Size = new System.Drawing.Size(27, 27);
@@ -386,6 +387,7 @@
             this.label10.Size = new System.Drawing.Size(78, 13);
             this.label10.TabIndex = 15;
             this.label10.Text = "Descuentos:";
+            this.label10.Visible = false;
             // 
             // descuentos
             // 
@@ -396,6 +398,7 @@
             this.descuentos.TabIndex = 14;
             this.descuentos.Text = "0.00";
             this.descuentos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.descuentos.Visible = false;
             // 
             // label9
             // 
@@ -482,6 +485,7 @@
             this.total.ReadOnly = true;
             this.total.Size = new System.Drawing.Size(130, 25);
             this.total.TabIndex = 5;
+            this.total.Text = "0.00";
             this.total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // impuestos
@@ -492,6 +496,7 @@
             this.impuestos.ReadOnly = true;
             this.impuestos.Size = new System.Drawing.Size(130, 25);
             this.impuestos.TabIndex = 4;
+            this.impuestos.Text = "0.00";
             this.impuestos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
@@ -513,6 +518,7 @@
             this.subtotal.ReadOnly = true;
             this.subtotal.Size = new System.Drawing.Size(130, 25);
             this.subtotal.TabIndex = 3;
+            this.subtotal.Text = "0.00";
             this.subtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
@@ -554,7 +560,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.Envia);
             this.panel5.Controls.Add(this.imprimir);
             this.panel5.Controls.Add(this.GuardayConfirma);
             this.panel5.Location = new System.Drawing.Point(696, 369);
@@ -562,22 +568,24 @@
             this.panel5.Size = new System.Drawing.Size(432, 79);
             this.panel5.TabIndex = 10;
             // 
-            // button2
+            // Envia
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(284, 41);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 32);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Enviar por Correo";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Envia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
+            this.Envia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Envia.Enabled = false;
+            this.Envia.FlatAppearance.BorderSize = 0;
+            this.Envia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.Envia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.Envia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Envia.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Envia.ForeColor = System.Drawing.Color.White;
+            this.Envia.Location = new System.Drawing.Point(284, 41);
+            this.Envia.Name = "Envia";
+            this.Envia.Size = new System.Drawing.Size(143, 32);
+            this.Envia.TabIndex = 18;
+            this.Envia.Text = "Enviar por Correo";
+            this.Envia.UseVisualStyleBackColor = false;
+            this.Envia.Click += new System.EventHandler(this.Envia_Click);
             // 
             // imprimir
             // 
@@ -958,7 +966,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button imprimir;
         private System.Windows.Forms.Button GuardayConfirma;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Envia;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel2;

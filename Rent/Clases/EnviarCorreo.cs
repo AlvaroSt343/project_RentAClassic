@@ -1,18 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net.Mail;
 using System.Windows.Forms;
 
-namespace Ejercicio_12_Correo
+namespace Rent.Clases
 {
     class EnviarCorreo
     {
-        public int Correo(string servidor, string remitente, string password, string destinatario, string Asunto, string ElMensaje)
+        public string ElFolio { set; get; }
+        public string Elcliente { set; get; }
+        public string ElAuto { set; get; }
+        public string destinatario { set; get; }
+
+        string servidor = "smtp.gmail.com";
+        string remitente = "rentaclassics@gmail.com";
+        string password = "acceso01";
+        string Asunto = "CONTRATO FACTURA DE RENTA";
+        //string ElMensaje = "Estimado: " + this.Elcliente +"d";
+
+        public void Correo()
         {
-            int bandera = 0;
             //genera los parametros para la estructura del mail
             try
             {
@@ -21,19 +31,23 @@ namespace Ejercicio_12_Correo
                 mail.From = new MailAddress(remitente);
                 mail.To.Add(destinatario);
                 mail.Subject = Asunto;
-                mail.Body = ElMensaje;
+                mail.Body = "Estimado: " + Elcliente + "\n\n" +
+                    "\n\n Usted ah rentado: "+ ElAuto +
+                    "Le hacemos la entraga de su contrato por este medio. \n\n Rent A Classic ¡AGRADECE SU PREFERENCIA!";
+                mail.Attachments.Add(new Attachment("C:\\RentDocs\\Renta_" + ElFolio + ".pdf"));
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = false;
                 SmtpServer.Credentials = new System.Net.NetworkCredential(remitente, password);
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
-                bandera = 1;
+                Variables.se_guardo = "SI";
             }
-            catch (Exception)
+            catch
             {
-                bandera = 0;
+                Variables.se_guardo = "NO";
             }
-            return bandera;
+
         }
     }
+
 }
